@@ -38,6 +38,34 @@ public class DictionaryManegement {
         }
     }
 
+    public Word dictionaryLookup() {
+        String findWord = scanner.nextLine();
+        Word word = new Word();
+        for (Word foundWord : dictionary.getWordArrayList()) {
+            String str = foundWord.getWord_target();
+            str = str.toLowerCase();
+            if (findWord.compareTo(str) == 0) {
+                word.setWord_target(foundWord.getWord_target());
+                word.setWord_explain(foundWord.getWord_explain());
+                break;
+            }
+        }
+        return word;
+    }
 
+    public static int isSubstring(String s1, String s2) {
+        int M = s1.length();
+        int N = s2.length();
+
+        for (int i = 0; i <= N - M; i++) {
+            int j;
+            for (j = 0; j < M; j++)
+                if (s2.charAt(i + j) != s1.charAt(j))
+                    break;
+            if (j == M)
+                return 1;
+        }
+        return -1;
+    }
 }
 

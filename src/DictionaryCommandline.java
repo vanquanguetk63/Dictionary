@@ -18,12 +18,11 @@ public class DictionaryCommandline {
             state = scanner.nextInt();
             switch (state){
                 case 1:
-                    System.out.println("Vui long nhap so tu ban muon nhap");
-                    int numBer = scanner.nextInt();
-                    while (numBer > 0) {
-                        dictionaryManegement.insertFromCommandline();
-                        numBer--;
-                    }
+                    System.out.println("Nhap vao tu muon tim");
+                    Word word = dictionaryManegement.dictionaryLookup();
+                    String format = "|%1$-10s|%2$-20s|\n";
+                    System.out.format(format, "English", "VietNamese");
+                    System.out.format(format, word.getWord_target(), word.getWord_explain());
                     break;
                 case 2:
                     showAllWords();
@@ -51,7 +50,7 @@ public class DictionaryCommandline {
 
     public static void main(String[] args) {
         System.out.println("Bang dieu khien");
-        System.out.println("1. Them tu");
+        System.out.println("1. Tim tu");
         System.out.println("2. Mo tu dien");
         System.out.println("3. Dong");
         DictionaryCommandline dictionaryCommandline = new DictionaryCommandline();
