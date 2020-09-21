@@ -1,3 +1,5 @@
-Hello	Xin chào
 Act	Hành động
+Hello	Xin chào
+Ping	Bao hieu
+Play 	Choi
 Professional	Chuyên nghiệp

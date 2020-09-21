@@ -119,5 +119,18 @@ public class DictionaryManegement {
         }
         return word;
     }
+
+    public ArrayList<Word> dictionarySearchAdvanced(String searchWord) {
+        ArrayList<Word> list = new ArrayList<>();
+        searchWord = searchWord.toLowerCase();
+        for (Word word : dictionary.getWordArrayList()) {
+            String wordTarget = word.getWord_target();
+            wordTarget = wordTarget.toLowerCase();
+            if (wordTarget.startsWith(searchWord)) {
+                list.add(word);
+            }
+        }
+        return list;
+    }
 }
 

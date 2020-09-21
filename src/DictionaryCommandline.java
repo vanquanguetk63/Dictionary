@@ -1,3 +1,4 @@
+import java.awt.image.AreaAveragingScaleFilter;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.zip.DeflaterInputStream;
@@ -18,13 +19,17 @@ public class DictionaryCommandline {
             state = scanner.nextInt();
             if (state == 1) {
                 System.out.println("Nhap vao tu muon tim");
-                String findWord = scanner.next();
-                if (findWord != null) {
-                    Word word = dictionaryManegement.dictionaryLookup(findWord);
-                    if (word != null) {
-                        String format = "|%1$-10s|%2$-20s|\n";
-                        System.out.format(format, "English", "VietNamese");
-                        System.out.format(format, word.getWord_target(), word.getWord_explain());
+                String searchWord = scanner.next();
+                if (searchWord != null) {
+                    ArrayList<Word> listWord = dictionaryManegement.dictionarySearchAdvanced(searchWord);
+                    if (listWord != null) {
+                        String format = "|%1$-10s|%2$-20s|%3$-20s|\n";
+                        int index = 1;
+                        System.out.format(format, "STT", "English", "VietNamese");
+                        for (Word word : listWord) {
+                            System.out.format(format, index, word.getWord_target(), word.getWord_explain());
+                            index++;
+                        }
                     }
                 }
             }
