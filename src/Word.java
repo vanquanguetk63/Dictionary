@@ -12,12 +12,10 @@ public class Word {
         if(str.isEmpty()) {
             return str;
         }
-
         return str.substring(0, 1).toUpperCase() + str.substring(1);
     }
 
     public Word(String word_target, String word_explain) {
-        int firstCharacter = 0;
         word_target = capitalize(word_target);
         word_explain = capitalize(word_explain);
         this.word_target = word_target;

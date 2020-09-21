@@ -16,7 +16,9 @@ public class Dictionary {
     public void sortWord() {
         for (int i = 0;i < wordArrayList.size() - 1; i++) {
             for (int j = i + 1;j < wordArrayList.size(); j++) {
-                if (wordArrayList.get(i).getWord_target().compareTo(wordArrayList.get(j).getWord_target()) > 0) {
+                int compareTwoWord = wordArrayList.get(i).getWord_target()
+                                    .compareTo(wordArrayList.get(j).getWord_target());
+                if (compareTwoWord > 0) {
                     Word swapWord = wordArrayList.get(j);
                     wordArrayList.set(j, wordArrayList.get(i));
                     wordArrayList.set(i, swapWord);

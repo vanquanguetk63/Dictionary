@@ -38,34 +38,31 @@ public class DictionaryManegement {
         }
     }
 
-    public Word dictionaryLookup() {
-        String findWord = scanner.nextLine();
-        Word word = new Word();
-        for (Word foundWord : dictionary.getWordArrayList()) {
-            String str = foundWord.getWord_target();
-            str = str.toLowerCase();
-            if (findWord.compareTo(str) == 0) {
-                word.setWord_target(foundWord.getWord_target());
-                word.setWord_explain(foundWord.getWord_explain());
-                break;
+    public int binarySearchIndex(ArrayList<Word> words, int first, int last, String findWord) {
+        if (last >= first) {
+            int mid = first + (last - first) / 2;
+            String wordOfList = words.get(mid).getWord_target().toLowerCase();
+            int compareTwoStr = wordOfList.compareTo(findWord);
+            if (compareTwoStr == 0 ) {
+                return mid;
             }
-        }
-        return word;
-    }
+            if (compareTwoStr > 0)
+                return binarySearchIndex(words, first, mid - 1, findWord);
 
-    public static int isSubstring(String s1, String s2) {
-        int M = s1.length();
-        int N = s2.length();
-
-        for (int i = 0; i <= N - M; i++) {
-            int j;
-            for (j = 0; j < M; j++)
-                if (s2.charAt(i + j) != s1.charAt(j))
-                    break;
-            if (j == M)
-                return 1;
+            return binarySearchIndex(words, mid + 1, last, findWord);
         }
         return -1;
+    }
+
+    public Word dictionaryLookup() {
+        String findWord = scanner.nextLine();
+        findWord = findWord.toLowerCase();
+        Word word = new Word();
+        int indexOfWord = binarySearchIndex(dictionary.getWordArrayList(), 0, dictionary.getWordArrayList().size() - 1, findWord);
+        if (indexOfWord != -1) {
+            word = dictionary.getWordArrayList().get(indexOfWord);
+        }
+        return word;
     }
 }
 
