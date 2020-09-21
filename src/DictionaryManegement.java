@@ -1,20 +1,59 @@
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class DictionaryManegement {
     Dictionary dictionary = new Dictionary();
     Scanner scanner = new Scanner(System.in);
+    DictionaryCommandline dictionaryCommandline = new DictionaryCommandline();
 
     public DictionaryManegement() {
-
+        insertFromFile();
     }
 
     public void insertFromCommandline() {
+        System.out.println("New Word EL");
         String word_target = scanner.nextLine();
+        System.out.println("VietNamese");
         String word_explain = scanner.nextLine();
-        Word word = new Word(word_target, word_explain);
-        dictionary.addWordToDictionary(word);
+        Word word = dictionaryLookup(word_target);
+        if (word == null) {
+            word = new Word(word_target, word_explain);
+            dictionary.addWordToDictionary(word);
+        }
+        else {
+            System.out.println("Tu da ton tai");
+        }
+    }
+
+    public void editWord(String edit) {
+        Word word = dictionaryLookup(edit);
+        if (word != null) {
+            System.out.println("Nhap vao chuoi tu ban muon sua cach nhau boi dau cach");
+            String[] editWord;
+            String input = scanner.nextLine();
+            editWord = input.split(" ");
+            word.setWord_target(editWord[0]);
+            word.setWord_explain(editWord[1]);
+            dictionary.sortWord();
+            System.out.println("Sua Thanh cong");
+        }
+        else {
+            System.out.println("Can not found ");
+        }
+    }
+
+    public void removeWord(String remove) {
+        Word word = dictionaryLookup(remove);
+        if (word != null) {
+            dictionary.getWordArrayList().remove(word);
+            System.out.println("Xoa thanh cong");
+        }
+        else {
+            System.out.println("Can not found ");
+        }
     }
 
     public void insertFromFile() {
@@ -38,6 +77,21 @@ public class DictionaryManegement {
         }
     }
 
+    public void exportToFile(){
+        try {
+            FileWriter myFile = new FileWriter("src/Dictionary.txt");
+            int index = 0;
+            while (! dictionary.getWordArrayList().isEmpty() && index < dictionary.getWordArrayList().size()) {
+                Word word = dictionary.getWordArrayList().get(index);
+                myFile.write(word.getWord_target() + "\t" + word.getWord_explain() + "\n");
+                index++;
+            }
+            myFile.close();
+        } catch (IOException e) {
+            System.out.println("Error to Write");
+            e.printStackTrace();
+        }
+    }
     public int binarySearchIndex(ArrayList<Word> words, int first, int last, String findWord) {
         if (last >= first) {
             int mid = first + (last - first) / 2;
@@ -54,13 +108,14 @@ public class DictionaryManegement {
         return -1;
     }
 
-    public Word dictionaryLookup() {
-        String findWord = scanner.nextLine();
+    public Word dictionaryLookup(String findWord) {
         findWord = findWord.toLowerCase();
-        Word word = new Word();
+        Word word;
         int indexOfWord = binarySearchIndex(dictionary.getWordArrayList(), 0, dictionary.getWordArrayList().size() - 1, findWord);
         if (indexOfWord != -1) {
             word = dictionary.getWordArrayList().get(indexOfWord);
+        } else {
+            return null;
         }
         return word;
     }
