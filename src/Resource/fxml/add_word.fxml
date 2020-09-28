@@ -1,10 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="AppFx.Controller.Controller"
-            prefHeight="400.0" prefWidth="635.0">
+<AnchorPane prefHeight="400.0" prefWidth="635.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AppFx.Controller.AddWordController">
+    <children>
+        <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="360.0" prefWidth="275.0" style="-fx-background-color: #FFFEFD;">
+         <children>
+            <Label alignment="CENTER" layoutX="-1.0" layoutY="14.0" prefHeight="41.0" prefWidth="275.0" style="-fx-border-width: 0 0 1 0; -fx-padding: 0 0 8 0; -fx-border-color: #3F3122;" text="Add a new Word" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="71.0" prefHeight="41.0" prefWidth="89.0" text="New Word">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="add_new_word" layoutX="103.0" layoutY="79.0" promptText="New Word" />
+            <Label layoutX="14.0" layoutY="131.0" prefHeight="41.0" prefWidth="89.0" text="Meaning">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="meaning_word" alignment="TOP_LEFT" layoutX="103.0" layoutY="139.0" prefHeight="146.0" prefWidth="149.0" promptText="Meaning">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+            <Button fx:id="save_word" layoutX="200.0" layoutY="308.0" mnemonicParsing="false" onAction="#handleClickSave" prefHeight="25.0" prefWidth="52.0" text="Add" />
+         </children>
+        </AnchorPane>
+        <AnchorPane fx:id="right_content" layoutX="306.0" layoutY="14.0" prefHeight="360.0" prefWidth="310.0" style="-fx-background-color: #FFFEFD;">
+           <children>
+              <Label alignment="CENTER" layoutY="14.0" prefHeight="41.0" prefWidth="311.0" style="-fx-border-width: 0 0 1 0; -fx-padding: 0 0 8 0; -fx-border-color: #3F3122;" text="Notification" textAlignment="CENTER">
+                 <font>
+                    <Font name="System Bold" size="21.0" />
+                 </font>
+              </Label>
+            <Label fx:id="notify" alignment="TOP_CENTER" layoutY="71.0" prefHeight="30.0" prefWidth="325.0" textFill="#a80909">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+            <Label fx:id="view_word_add" alignment="TOP_LEFT" layoutX="1.0" layoutY="101.0" prefHeight="291.0" prefWidth="325.0">
+               <font>
+                  <Font name="Verdana" size="17.0" />
+               </font>
+            </Label>
+           </children>
+        </AnchorPane>
 
+    </children>
 </AnchorPane>

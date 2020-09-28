@@ -1,6 +1,7 @@
 package AppFx.Controller;
 
 
+import AppFx.Advanced.InitDictionary;
 import base.Word;
 
 import javafx.event.ActionEvent;
@@ -20,7 +21,11 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class InController implements Initializable {
-    private Controller mainController = new Controller();
+    protected Controller mainController;
+//    private InitDictionary initDictionary = new InitDictionary();
+
+
+
     private ExplainController explainController;
     @FXML
     private TextField search_input;
@@ -124,5 +129,13 @@ public class InController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 //        System.out.println(mainController.getInitDictionary().);
+    }
+
+    public Controller getMainController() {
+        return mainController;
+    }
+
+    public void setMainController(Controller mainController) {
+        this.mainController = mainController;
     }
 }

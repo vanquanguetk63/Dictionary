@@ -1,5 +1,18 @@
+A	A
 Act	Hành động
+B	B
+Boy	Con trai
+C	C
+E	E
+Engineer	Ky su
+F	F
+Girl	Con gai
+H	H
+Heart	Trai tim
 Hello	Xin chào
+Hi	Xin chao
+Love	Yeu
 Ping	Bao hieu
 Play 	Choi
 Professional	Chuyên nghiệp
+Teacher	Co giao

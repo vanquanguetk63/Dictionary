@@ -18,11 +18,17 @@ public class Controller implements Initializable {
     private Button btn_search;
 
     @FXML
+    private Button btn_add;
+
+    @FXML
     private AnchorPane anchor_view;
 
     private AnchorPane searchAnchorPane = null;
+    private AnchorPane addAnchorPane = null;
     private AnchorPane curAnchor;
+
     private SearchController searchController;
+    private AddWordController addWordController;
 
     public void setAnchor(AnchorPane anchorPane) {
         this.anchor_view.getChildren().setAll(anchorPane);
@@ -35,15 +41,24 @@ public class Controller implements Initializable {
         btn_search.setStyle("-fx-background-color:  #394357;");
     }
 
+    public void showAddBTN() {
+        this.setAnchor(addAnchorPane);
+        this.resetStyleNav();
+        btn_add.setStyle("-fx-background-color:  #394357;");
+    }
+
     @FXML
     public void handleClickEvent(ActionEvent actionEvent) {
         if (actionEvent.getSource() == btn_search) {
             showSearchBTN();
+        } else if (actionEvent.getSource() == btn_add) {
+            showAddBTN();
         }
     }
 
     public void resetStyleNav() {
-        btn_search.setStyle(null);
+        btn_search.setStyle("-fx-background-color:  #443A37");
+        btn_add.setStyle("-fx-background-color:  #443A37");
     }
 
     @Override
@@ -58,6 +73,16 @@ public class Controller implements Initializable {
             System.out.println("Error load SearchBTN.");
         }
 
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("/Resource/fxml/add_word.fxml"));
+            addAnchorPane = fxmlLoader.load();
+            addWordController = fxmlLoader.getController();
+        }
+        catch (IOException e) {
+            System.out.println("Error load add_word.");
+        }
+
         this.showSearchBTN();
     }
 
@@ -67,5 +92,9 @@ public class Controller implements Initializable {
 
     public InitDictionary getInitDictionary() {
         return initDictionary;
+    }
+
+    public AddWordController getAddWordController() {
+        return addWordController;
     }
 }
