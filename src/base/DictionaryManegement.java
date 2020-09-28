@@ -1,3 +1,5 @@
+package base;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -14,7 +16,7 @@ public class DictionaryManegement {
     }
 
     public void insertFromCommandline() {
-        System.out.println("New Word EL");
+        System.out.println("New Console.Word EL");
         String word_target = scanner.nextLine();
         System.out.println("VietNamese");
         String word_explain = scanner.nextLine();
@@ -75,6 +77,7 @@ public class DictionaryManegement {
             System.out.println("Can't read file");
             e.printStackTrace();
         }
+        dictionary.sortWord();
     }
 
     public void exportToFile(){
@@ -131,6 +134,14 @@ public class DictionaryManegement {
             }
         }
         return list;
+    }
+
+    public Dictionary getDictionary() {
+        return dictionary;
+    }
+
+    public void setDictionary(Dictionary dictionary) {
+        this.dictionary = dictionary;
     }
 }
 

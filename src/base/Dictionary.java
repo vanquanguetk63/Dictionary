@@ -1,3 +1,7 @@
+package base;
+
+import javafx.beans.value.WritableObjectValue;
+
 import java.util.ArrayList;
 
 public class Dictionary {
@@ -9,8 +13,18 @@ public class Dictionary {
      */
     public void addWordToDictionary(Word word) {
         int length = wordArrayList.size();
-        wordArrayList.add(length, word);
-        sortWord();
+        if (isExist(word) == false){
+            wordArrayList.add(length, word);
+        }
+    }
+
+    public boolean isExist(Word word) {
+        for (Word checkWord : wordArrayList) {
+            if (checkWord.getWord_target().compareTo(word.getWord_target()) == 0) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public void sortWord() {

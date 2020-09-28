@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="310.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AppFx.Controller.ExplainController">
+   <children>
+      <AnchorPane prefHeight="53.0" prefWidth="310.0">
+         <children>
+            <Label fx:id="view_word_target" layoutX="14.0" layoutY="12.0" prefHeight="38.0" prefWidth="137.0" text="Label" underline="true">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label fx:id="view_word_explain" alignment="TOP_LEFT" ellipsisString=".." nodeOrientation="LEFT_TO_RIGHT" prefHeight="293.0" prefWidth="310.0" style="-fx-background-color: #F1EDE8; -fx-border-color: #3F3122;" text="Label" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="Verdana" size="17.0" />
+         </font>
+      </Label>
+   </children>
+</VBox>

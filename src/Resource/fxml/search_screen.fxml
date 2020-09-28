@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="635.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AppFx.Controller.SearchController">
+   <children>
+      <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="360.0" prefWidth="275.0" style="-fx-background-color: #FFFEFD;">
+         <children>
+            <TextField fx:id="search_input" layoutX="14.0" layoutY="14.0" onAction="#handleSearchInput" onKeyReleased="#handleChangeInputSearch" prefHeight="33.0" prefWidth="246.0" promptText="Search..." />
+            <ListView fx:id="search_list_view" layoutX="16.0" layoutY="55.0" onMouseClicked="#handleSelectListView" prefHeight="292.0" prefWidth="246.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="right_content" layoutX="306.0" layoutY="14.0" prefHeight="360.0" prefWidth="310.0" style="-fx-background-color: #FFFEFD;" />
+
+   </children>
+</AnchorPane>
