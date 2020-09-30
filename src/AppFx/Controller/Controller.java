@@ -1,5 +1,6 @@
 package AppFx.Controller;
 
+import AppFx.Advanced.BookMark;
 import AppFx.Advanced.InitDictionary;
 import com.sun.javafx.iio.ios.IosDescriptor;
 import javafx.event.ActionEvent;
@@ -7,13 +8,24 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
+
+    public ImageView sound_btn;
+    public Label delete;
+    public Label edit;
+    @FXML
+    private Label bookmark;
+    @FXML
+    private ListView<String> list_view_explain;
+
     protected static InitDictionary initDictionary = new InitDictionary();
+    protected static BookMark bookMark = new BookMark();
 
     @FXML
     private Button btn_search;
@@ -145,5 +157,11 @@ public class Controller implements Initializable {
         return initDictionary;
     }
 
+    public BookMarkController getBookMarkController() {
+        return bookMarkController;
+    }
 
+    public void setBookMarkController(BookMarkController bookMarkController) {
+        this.bookMarkController = bookMarkController;
+    }
 }

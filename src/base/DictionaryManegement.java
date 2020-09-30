@@ -9,7 +9,6 @@ import java.util.Scanner;
 public class DictionaryManegement {
     Dictionary dictionary = new Dictionary();
     Scanner scanner = new Scanner(System.in);
-    DictionaryCommandline dictionaryCommandline = new DictionaryCommandline();
 
     public DictionaryManegement() {
         this.insertFromFile();

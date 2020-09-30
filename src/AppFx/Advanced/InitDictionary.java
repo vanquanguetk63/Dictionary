@@ -58,7 +58,6 @@ public class InitDictionary extends DictionaryManegement  {
                     new FileWriter(fileName, true));
             out.write(data);
             out.close();
-            System.out.println(data);
         } catch (IOException e) {
             e.printStackTrace();
         }
