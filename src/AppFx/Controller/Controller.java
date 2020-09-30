@@ -1,6 +1,7 @@
 package AppFx.Controller;
 
 import AppFx.Advanced.InitDictionary;
+import com.sun.javafx.iio.ios.IosDescriptor;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,7 +13,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
-    private InitDictionary initDictionary = new InitDictionary();
+    protected static InitDictionary initDictionary = new InitDictionary();
 
     @FXML
     private Button btn_search;
@@ -21,14 +22,28 @@ public class Controller implements Initializable {
     private Button btn_add;
 
     @FXML
+    private Button btn_edit;
+
+    @FXML
+    private Button btn_book_mark;
+
+    @FXML
     private AnchorPane anchor_view;
 
     private AnchorPane searchAnchorPane = null;
     private AnchorPane addAnchorPane = null;
+    private AnchorPane editAnchorPane = null;
+    private AnchorPane bookMarkPane = null;
     private AnchorPane curAnchor;
 
     private SearchController searchController;
     private AddWordController addWordController;
+    private EditWordController editWordController;
+    private BookMarkController bookMarkController;
+
+    public Controller() {
+
+    }
 
     public void setAnchor(AnchorPane anchorPane) {
         this.anchor_view.getChildren().setAll(anchorPane);
@@ -47,18 +62,36 @@ public class Controller implements Initializable {
         btn_add.setStyle("-fx-background-color:  #394357;");
     }
 
+    public void showEditBTN() {
+        this.setAnchor(editAnchorPane);
+        this.resetStyleNav();
+        btn_edit.setStyle("-fx-background-color:  #394357;");
+    }
+
+    public void showBookMark() {
+        this.setAnchor(bookMarkPane);
+        this.resetStyleNav();
+        btn_book_mark.setStyle("-fx-background-color:  #394357;");
+    }
+
     @FXML
     public void handleClickEvent(ActionEvent actionEvent) {
         if (actionEvent.getSource() == btn_search) {
             showSearchBTN();
         } else if (actionEvent.getSource() == btn_add) {
             showAddBTN();
+        } else if (actionEvent.getSource() == btn_edit) {
+            showEditBTN();
+        } else if (actionEvent.getSource() == btn_book_mark) {
+            showBookMark();
         }
-    }
+     }
 
     public void resetStyleNav() {
         btn_search.setStyle("-fx-background-color:  #443A37");
         btn_add.setStyle("-fx-background-color:  #443A37");
+        btn_edit.setStyle("-fx-background-color:  #443A37");
+        btn_book_mark.setStyle("-fx-background-color: #443A37");
     }
 
     @Override
@@ -68,7 +101,6 @@ public class Controller implements Initializable {
             fxmlLoader.setLocation(getClass().getResource("/Resource/fxml/search_screen.fxml"));
             searchAnchorPane = fxmlLoader.load();
             searchController = fxmlLoader.getController();
-//            searchController.initData(this);
         } catch (IOException e) {
             System.out.println("Error load SearchBTN.");
         }
@@ -83,18 +115,35 @@ public class Controller implements Initializable {
             System.out.println("Error load add_word.");
         }
 
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("/Resource/fxml/edit_word.fxml"));
+            editAnchorPane = fxmlLoader.load();
+            editWordController = fxmlLoader.getController();
+            editWordController.initData1(this);
+        }
+        catch  (IOException e) {
+            System.out.println("Error load edit_word.");
+        }
+
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("/Resource/fxml/book_mark.fxml"));
+            bookMarkPane = fxmlLoader.load();
+            bookMarkController = fxmlLoader.getController();
+        } catch (IOException e) {
+            System.out.println("Error load BookMark.");
+        }
+
         this.showSearchBTN();
     }
-
-    public void setInitDictionary(InitDictionary initDictionary) {
-        this.initDictionary = initDictionary;
-    }
-
-    public InitDictionary getInitDictionary() {
-        return initDictionary;
-    }
-
     public AddWordController getAddWordController() {
         return addWordController;
     }
+
+    public static InitDictionary getInitDictionary() {
+        return initDictionary;
+    }
+
+
 }

@@ -1,40 +1,40 @@
 package AppFx.Controller;
 
-import AppFx.Advanced.InitDictionary;
 import base.Word;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
-import javafx.scene.web.WebEngine;
-import javafx.scene.web.WebView;
+import javafx.scene.control.ListView;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 
-import java.awt.*;
+import java.util.ArrayList;
+
 
 public class ExplainController extends InController {
-    private Controller controller = new Controller();
-
+    public ImageView sound_btn;
+    public Label delete;
     @FXML
-    private Label view_word_target;
-
-    @FXML
-    private Label view_word_explain;
+    private ListView<String> list_view_explain;
 
 
-    public ExplainController(){
+
+    public void initData(ArrayList<Word> list) {
+        ArrayList<String> listTarget = new ArrayList<>();
+        for (Word str : list) {
+            listTarget.add(str.getWord_explain());
+        }
+        list_view_explain.getItems().setAll(listTarget);
     }
 
-    public void initData(Controller controller, Word word) {
-        this.controller = controller;
-        view_word_target.setText(word.getWord_target());
-        String str = "  " + word.getWord_explain();
-        view_word_explain.setText(str);
+    public void handleSpeech(MouseEvent mouseEvent) {
     }
 
-    public void setView_word_target(Label view_word_target) {
-        this.view_word_target = view_word_target;
+    public void handleDelete(MouseEvent mouseEvent) {
     }
 
-    public Label getView_word_target() {
-        return view_word_target;
+    public void handleEdit(MouseEvent mouseEvent) {
+    }
+
+    public void handleBookmark(MouseEvent mouseEvent) {
     }
 }

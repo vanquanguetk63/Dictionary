@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class DictionaryCommandline {
     Scanner scanner = new Scanner(System.in);
-    public static DictionaryManegement dictionaryManegement = new DictionaryManegement();
+//    public static DictionaryManegement dictionaryManegement = new DictionaryManegement();
 
     public DictionaryCommandline() {
 
@@ -66,14 +66,14 @@ public class DictionaryCommandline {
 //    }
 
     public void showAllWords() {
-        ArrayList<Word> words = dictionaryManegement.dictionary.getWordArrayList();
-        int index = 1;
-        String format = "|%1$-10s|%2$-20s|%3$-20s|\n";
-        System.out.format(format, "STT", "English", "VietNamese");
-        for (Word word : words) {
-            System.out.format(format, index, word.getWord_target(), word.getWord_explain());
-            index++;
-        }
+//        ArrayList<Word> words = dictionaryManegement.dictionary.getWordArrayList();
+//        int index = 1;
+//        String format = "|%1$-10s|%2$-20s|%3$-20s|\n";
+//        System.out.format(format, "STT", "English", "VietNamese");
+//        for (Word word : words) {
+//            System.out.format(format, index, word.getWord_target(), word.getWord_explain());
+//            index++;
+//        }
     }
 
 //    public static void main(String[] args) {

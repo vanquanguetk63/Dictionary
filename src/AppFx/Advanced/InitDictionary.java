@@ -2,38 +2,39 @@ package AppFx.Advanced;
 
 import base.*;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
 
 public class InitDictionary extends DictionaryManegement  {
-    private boolean update = false;
     public InitDictionary() {
-        insertFromFile();
     }
 
-    public ArrayList<String> searchWordFromFX(String searchWord) {
+    public ArrayList<Word> searchWordFromFX(String searchWord) {
         ArrayList<Word> words = this.dictionarySearchAdvanced(searchWord);
-        ArrayList<String> results = new ArrayList<>();
+        return words;
+    }
 
-        for (Word word : words) {
-            results.add(word.getWord_target());
+    public Word editWordFX(Word word, String target, String explain) {
+        if (word != null) {
+            word.setWord_target(target);
+            word.setWord_explain(explain);
         }
-
-        return results;
+        else {
+            System.out.println("Can not Edit ");
+        }
+        return word;
     }
 
     public boolean addWordToDictionary(Word word) {
-        ArrayList<Word> list = this.getDictionary().getWordArrayList();
-        int length = list.size();
         if (isExist(word) == false){
-            update = true;
-            list.add(length, word);
-            this.getDictionary().setWordArrayList(list);
-            this.getDictionary().sortWord();
-            this.exportToFile();
+            this.getDictionary().getWordArrayList().add(word);
+            this.saveWordToFile(word);
             return true;
         }
-        update = false;
         return false;
     }
 
@@ -45,6 +46,23 @@ public class InitDictionary extends DictionaryManegement  {
             }
         }
         return false;
+    }
+
+    public void saveWordToFile(Word word) {
+        try {
+            String data = word.getWord_target() + " : " + word.getWord_explain() +"\n";
+
+            String fileName = "src/Dictionary.txt";
+
+            BufferedWriter out = new BufferedWriter(
+                    new FileWriter(fileName, true));
+            out.write(data);
+            out.close();
+            System.out.println(data);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     @Override

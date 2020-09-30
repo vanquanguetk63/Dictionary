@@ -12,7 +12,7 @@ public class DictionaryManegement {
     DictionaryCommandline dictionaryCommandline = new DictionaryCommandline();
 
     public DictionaryManegement() {
-        insertFromFile();
+        this.insertFromFile();
     }
 
     public void insertFromCommandline() {
@@ -60,6 +60,7 @@ public class DictionaryManegement {
 
     public void insertFromFile() {
         try {
+            System.out.println("insert");
             File file = new File("src/Dictionary.txt");
             Scanner myReader = new Scanner(file);
             int index = 0;
@@ -67,7 +68,7 @@ public class DictionaryManegement {
             String[] data2;
             while (myReader.hasNextLine()) {
                 data = myReader.nextLine();
-                data2 = data.split("\t");
+                data2 = data.split( " : " );
                 Word word = new Word(data2[0], data2[1]);
                 dictionary.addWordToDictionary(word);
             }
@@ -86,7 +87,7 @@ public class DictionaryManegement {
             int index = 0;
             while (! dictionary.getWordArrayList().isEmpty() && index < dictionary.getWordArrayList().size()) {
                 Word word = dictionary.getWordArrayList().get(index);
-                myFile.write(word.getWord_target() + "\t" + word.getWord_explain() + "\n");
+                myFile.write(word.getWord_target() + " : " + word.getWord_explain() + "\n");
                 index++;
             }
             myFile.close();
