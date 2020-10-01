@@ -47,4 +47,5 @@ public class BookMark extends InitDictionary {
             e.printStackTrace();
         }
     }
+
 }

@@ -51,7 +51,7 @@ public class Controller implements Initializable {
     private SearchController searchController;
     private AddWordController addWordController;
     private EditWordController editWordController;
-    private BookMarkController bookMarkController;
+    public static BookMarkController bookMarkController;
 
     public Controller() {
 

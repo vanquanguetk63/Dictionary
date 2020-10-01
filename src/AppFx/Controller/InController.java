@@ -41,6 +41,9 @@ public class InController implements Initializable {
         ArrayList<Word> list = Controller.getInitDictionary().searchWordFromFX(wordTarget);
         if (!list.isEmpty()) {
             initData(list);
+        } else {
+            search_list_view.getItems().clear();
+            list_view_explain.getItems().clear();
         }
 
     }

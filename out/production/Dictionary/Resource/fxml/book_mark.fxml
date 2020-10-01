@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="635.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AppFx.Controller.BookMarkController">
+   <children>
+      <AnchorPane layoutX="24.0" layoutY="24.0" prefHeight="360.0" prefWidth="275.0" style="-fx-background-color: #FFFEFD;">
+         <children>
+            <TextField fx:id="search_input" layoutX="14.0" layoutY="14.0" onAction="#handleSearchInput" onKeyReleased="#handleChangeInputSearch" prefHeight="33.0" prefWidth="246.0" promptText="Search..." />
+            <ListView fx:id="search_list_view" layoutX="16.0" layoutY="55.0" onMouseClicked="#handleSelectListView" prefHeight="258.0" prefWidth="246.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="316.0" layoutY="24.0" prefHeight="360.0" prefWidth="310.0" style="-fx-background-color: #FFFEFD;">
+         <children>
+            <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="310.0">
+               <children>
+                  <AnchorPane prefHeight="69.0" prefWidth="310.0">
+                     <children>
+                        <HBox layoutX="14.0" layoutY="3.0" prefHeight="41.0" prefWidth="122.0">
+                           <children>
+                              <ImageView fitHeight="38.0" fitWidth="37.0" onMouseClicked="#handleEdit" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../icons/icons8_Edit_52px_2.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="43.0" fitWidth="38.0" onMouseClicked="#handleBookmark" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../icons/icons8_Star_52px.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="delete" contentDisplay="GRAPHIC_ONLY" prefHeight="40.0" prefWidth="40.0" />
+                              <ImageView fitHeight="37.0" fitWidth="41.0" onMouseClicked="#handleDelete" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../icons/icons8_Trash_52px.png" />
+                                 </image>
+                              </ImageView>
+                              <Label contentDisplay="GRAPHIC_ONLY" prefHeight="39.0" prefWidth="40.0" text="Label" />
+                           </children>
+                        </HBox>
+                        <Label contentDisplay="GRAPHIC_ONLY" layoutX="257.0" layoutY="4.0" prefHeight="37.0" prefWidth="45.0" text="Label" />
+                        <ImageView fx:id="sound_btn" fitHeight="35.0" fitWidth="59.0" layoutX="262.0" layoutY="5.0" onMouseClicked="#handleSpeech" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/icons8_Speaker_48px.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="345.0" prefWidth="310.0">
+                     <children>
+                        <ListView fx:id="list_view_explain" layoutX="10.0" layoutY="14.0" prefHeight="256.0" prefWidth="291.0" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
