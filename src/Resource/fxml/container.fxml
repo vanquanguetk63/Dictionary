@@ -48,7 +48,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="btn_book_mark" contentDisplay="GRAPHIC_ONLY" layoutY="186.0"  minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleClickEvent" prefHeight="60.0" prefWidth="70.0" style="-fx-background-color: #443A37;">
+            <Button fx:id="btn_book_mark" contentDisplay="GRAPHIC_ONLY" layoutY="186.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleClickEvent" prefHeight="60.0" prefWidth="70.0" style="-fx-background-color: #443A37;">
                <graphic>
                   <ImageView fitHeight="43.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -57,11 +57,11 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="btn_history" contentDisplay="GRAPHIC_ONLY" layoutY="254.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleClickEvent" prefHeight="60.0" prefWidth="70.0" style="-fx-background-color: #443A37;">
+            <Button fx:id="btn_gg" contentDisplay="GRAPHIC_ONLY" layoutY="254.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleClickEvent" prefHeight="60.0" prefWidth="70.0" style="-fx-background-color: #443A37;">
                <graphic>
-                  <ImageView fitHeight="48.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="57.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../icons/icons8_Clock_52px.png" />
+                        <Image url="@../icons/gg.png" />
                      </image>
                   </ImageView>
                </graphic>

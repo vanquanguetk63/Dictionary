@@ -14,23 +14,15 @@
       </AnchorPane>
       <AnchorPane fx:id="right_content" layoutX="311.0" layoutY="14.0" prefHeight="360.0" prefWidth="310.0" style="-fx-background-color: #FFFEFD;">
          <children>
-            <Label fx:id="speech" contentDisplay="GRAPHIC_ONLY" layoutX="111.0" layoutY="9.0" onMouseClicked="#handleSpeech" prefHeight="37.0" prefWidth="45.0" style="-fx-cursor: Hand;" text="Label">
-               <graphic>
-                  <ImageView  fitHeight="35.0" fitWidth="59.0" onMouseClicked="#handleSpeech" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: pointer;">
-                     <image>
-                        <Image url="@../icons/icons8_Speaker_48px.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Label>
+            <Label fx:id="speech" contentDisplay="GRAPHIC_ONLY" layoutX="111.0" layoutY="9.0" onMouseClicked="#handleSpeech" prefHeight="37.0" prefWidth="45.0" style="-fx-cursor: Hand;" text="Label" />
             <ListView fx:id="list_view_explain" layoutX="13.0" layoutY="53.0" prefHeight="258.0" prefWidth="285.0" />
-            <HBox layoutX="174.0" layoutY="7.0" prefHeight="41.0" prefWidth="122.0">
+            <HBox layoutX="169.0" layoutY="9.0" prefHeight="38.0" prefWidth="129.0">
                <children>
-                  <Label fx:id="edit" prefHeight="37.0" prefWidth="37.0" style="-fx-cursor: Hand;">
+                  <Label fx:id="speech" onMouseClicked="#handleSpeech" prefHeight="37.0" prefWidth="37.0" style="-fx-cursor: Hand;">
                      <graphic>
-                        <ImageView fitHeight="38.0" fitWidth="37.0" onMouseClicked="#handleEdit" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="35.0" fitWidth="59.0" onMouseClicked="#handleSpeech" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: pointer;">
                            <image>
-                              <Image url="@../icons/icons8_Edit_52px_2.png" />
+                              <Image url="@../icons/icons8_Speaker_48px.png" />
                            </image>
                         </ImageView>
                      </graphic>

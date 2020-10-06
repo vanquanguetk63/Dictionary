@@ -4,7 +4,6 @@ package AppFx.Controller;
 import base.Word;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -20,6 +19,10 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class InController implements Initializable {
+    protected Controller controller = new Controller();
+
+    @FXML
+    public Label edit;
 
     @FXML
     protected TextField search_input;
@@ -36,7 +39,7 @@ public class InController implements Initializable {
     protected ImageView img_book_mark;
 
     public void searchListWord(String wordTarget) {
-        ArrayList<Word> list = Controller.getInitDictionary().searchWordFromFX(wordTarget);
+        ArrayList<Word> list = controller.getInitDictionary().searchWordFromFX(wordTarget);
         if (!list.isEmpty()) {
             initData(list);
         } else {
@@ -47,7 +50,7 @@ public class InController implements Initializable {
     }
 
     public void searchWordExactly(String wordTarget) {
-        Word word = Controller.getInitDictionary().dictionaryLookup(wordTarget);
+        Word word = controller.getInitDictionary().dictionaryLookup(wordTarget);
         if (word != null ) {
             initStar(word);
         }
@@ -126,10 +129,12 @@ public class InController implements Initializable {
     public void reset() {
         search_input.setText("");
         search_list_view.getItems().clear();
-        Word word = new Word("","");
+        list_view_explain.getItems().clear();
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
     }
+
+
 }

@@ -48,4 +48,12 @@ public class EditWordController extends InController{
                 + "  Meaning:  "  + word.getWord_explain();
         view_word_edit.setText(str);
     }
+
+    public TextField getOld_word() {
+        return old_word;
+    }
+
+    public void setOld_word(String str) {
+        this.old_word.setText(str);
+    }
 }
