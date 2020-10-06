@@ -1,8 +1,7 @@
 package AppFx.Controller;
 
-import AppFx.Advanced.InitDictionary;
 import base.Word;
-import javafx.beans.value.WritableObjectValue;
+
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -33,16 +32,15 @@ public class BookMarkController extends InController {
         }
 
         Word word = Controller.bookMark.dictionaryLookup(wordTarget);
-        if (word!=null) {
+        if (word != null) {
             initExplain(word);
-        }
-        else initList(list);
+        } else initList(list);
 
     }
 
     public void searchWordExactly(String wordTarget) {
         Word word = Controller.bookMark.dictionaryLookup(wordTarget);
-        if (word != null ) {
+        if (word != null) {
             initExplain(word);
         }
     }
@@ -89,6 +87,7 @@ public class BookMarkController extends InController {
         list_view_explain.getItems().clear();
         list_view_explain.getItems().setAll(word.getWord_explain());
     }
+
     public void initList(ArrayList<Word> word) {
         ArrayList<String> wordTarget = new ArrayList<>();
         ArrayList<String> wordExplain = new ArrayList<>();
@@ -116,7 +115,7 @@ public class BookMarkController extends InController {
         search_input.setText("");
         search_list_view.getItems().clear();
 
-        Word word = new Word("","");
+        Word word = new Word("", "");
 //        initExplain(word);
     }
 

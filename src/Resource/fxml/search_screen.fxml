@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 
 <AnchorPane prefHeight="400.0" prefWidth="635.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AppFx.Controller.SearchController">
    <children>
@@ -18,9 +14,9 @@
       </AnchorPane>
       <AnchorPane fx:id="right_content" layoutX="311.0" layoutY="14.0" prefHeight="360.0" prefWidth="310.0" style="-fx-background-color: #FFFEFD;">
          <children>
-            <Label contentDisplay="GRAPHIC_ONLY" layoutX="111.0" layoutY="9.0" prefHeight="37.0" prefWidth="45.0" style="-fx-cursor: Hand;" text="Label">
+            <Label fx:id="speech" contentDisplay="GRAPHIC_ONLY" layoutX="111.0" layoutY="9.0" onMouseClicked="#handleSpeech" prefHeight="37.0" prefWidth="45.0" style="-fx-cursor: Hand;" text="Label">
                <graphic>
-                  <ImageView fx:id="sound_btn" fitHeight="35.0" fitWidth="59.0" onMouseClicked="#handleSpeech" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: pointer;">
+                  <ImageView  fitHeight="35.0" fitWidth="59.0" onMouseClicked="#handleSpeech" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: pointer;">
                      <image>
                         <Image url="@../icons/icons8_Speaker_48px.png" />
                      </image>

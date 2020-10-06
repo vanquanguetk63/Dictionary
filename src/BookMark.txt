@@ -11,5 +11,5 @@ Teacher : Co giao
 Dance : Nhay
 Input : Vao
 Output : Ra
-Music : Am nhacHello : Xin chào
+Music : Am nhac
 Hello : Xin chào

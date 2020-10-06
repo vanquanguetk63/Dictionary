@@ -14,9 +14,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.VBox;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -89,6 +87,7 @@ public class InController implements Initializable {
         String wordTarget = search_list_view.getSelectionModel().getSelectedItem();
         if (wordTarget != null) {
             searchWordExactly(wordTarget);
+            search_input.setText(wordTarget);
         }
     }
 
@@ -111,7 +110,6 @@ public class InController implements Initializable {
                 return true;
             }
         }
-
         return false;
     }
 

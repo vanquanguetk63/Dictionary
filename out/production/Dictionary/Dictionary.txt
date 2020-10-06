@@ -31,3 +31,4 @@ In : Vao
 Out : Ra
 Think : Nghi
 Hell : Dia nguc
+Class : Lớp
