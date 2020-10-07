@@ -11,6 +11,17 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class BookMark extends InitDictionary {
+
+    @Override
+    public boolean addWordToDictionary(Word word) {
+        if (!isExist(word)){
+            this.getDictionary().getWordArrayList().add(word);
+            this.saveWordToFile(word);
+            return true;
+        }
+        return false;
+    }
+
     @Override
     public void insertFromFile() {
         try {
@@ -21,13 +32,12 @@ public class BookMark extends InitDictionary {
             String[] data2;
             while (myReader.hasNextLine()) {
                 data = myReader.nextLine();
-                data2 = data.split( " : " );
+                data2 = data.split(" : ");
                 Word word = new Word(data2[0], data2[1]);
                 this.getDictionary().addWordToDictionary(word);
             }
             myReader.close();
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             System.out.println("Can't read file");
             e.printStackTrace();
         }
@@ -36,7 +46,7 @@ public class BookMark extends InitDictionary {
     @Override
     public void saveWordToFile(Word word) {
         try {
-            String data = word.getWord_target() + " : " + word.getWord_explain() +"\n";
+            String data = word.getWord_target() + " : " + word.getWord_explain() + "\n";
 
             String fileName = "src/BookMark.txt";
 
@@ -45,7 +55,7 @@ public class BookMark extends InitDictionary {
             out.write(data);
             out.close();
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Cant write");
         }
     }
 
@@ -56,7 +66,7 @@ public class BookMark extends InitDictionary {
         for (Word word : wordArrayList) {
             word.setWord_target(word.getWord_target().toLowerCase());
             if (word.getWord_target().compareTo(findWord) == 0) {
-                return  word;
+                return word;
             }
         }
         return null;
@@ -68,8 +78,7 @@ public class BookMark extends InitDictionary {
         if (word != null) {
             this.getDictionary().getWordArrayList().remove(word);
             System.out.println("Xoa thanh cong");
-        }
-        else {
+        } else {
             System.out.println("Can not found ");
         }
     }

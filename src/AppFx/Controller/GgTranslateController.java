@@ -108,6 +108,7 @@ public class GgTranslateController extends InController implements Initializable
                         notify.setX(750);
                         notify.setY(350);
                         notify.showAndWait();
+                        controller.getInitDictionary().exportToFile();
                     } else {
                         Alert notify = new Alert(Alert.AlertType.WARNING);
                         notify.setTitle("Add");

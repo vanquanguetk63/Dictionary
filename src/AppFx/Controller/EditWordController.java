@@ -51,5 +51,7 @@ public class EditWordController extends InController{
         alert.setY(350);
         alert.setContentText("Sửa từ " + word.getWord_target() + " thành công");
         alert.showAndWait();
+        controller.getInitDictionary().getDictionary().sortWord();
+        controller.getInitDictionary().exportToFile();
     }
 }

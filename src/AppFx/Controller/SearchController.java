@@ -38,12 +38,12 @@ public class SearchController  extends  InController{
                     }
                     else {
                         image = new Image("/Resource/icons/icons8_Star_Filled_52px.png");
-                        controller.bookMark.getDictionary().getWordArrayList().add(word);
+                        controller.bookMark.addWordToDictionary(word);
                         controller.bookMarkController.search_list_view.getItems().add(word.getWord_target());
                         controller.bookMarkController.list_view_explain.getItems().add(word.getWord_explain());
                     }
                     img_book_mark.setImage(image);
-                    System.out.println("2");
+
                 }
             }
         }

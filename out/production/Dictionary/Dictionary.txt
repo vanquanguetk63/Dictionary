@@ -1,5 +1,6 @@
 A bit : Một chút, một tí
 A few : Một ít, một vài
+Aa : Aa
 Abroad : Ở nước ngoài
 Absence : Vắng mặt
 Absent : Vắng mặt, nghỉ
@@ -2024,6 +2025,7 @@ Grow : Lớn lên
 Grow up : Lớn lên, trưởng thành
 Growing : Phát triển
 Growth : Sự phát triển
+Gsdgsd : Gsdgsd
 Guarantee : Bảo hành
 Guard : Bảo vệ
 Guess : Phỏng đoán
@@ -2109,6 +2111,7 @@ Hers : Của cô ấy
 Herself : Cô ấy
 Hesitate : Do dự
 Hey : Chào
+Hgdsg : Hgdsg
 Hi : Chào
 Hidden : Ẩn
 Hide : Ẩn giấu
@@ -5048,3 +5051,4 @@ Yourself : Bản thân bạn
 Youth : Thiếu niên
 Zero number : Số không
 Zone : Vùng
+Sdgsd : Sdgsd

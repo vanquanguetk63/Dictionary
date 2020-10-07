@@ -81,7 +81,7 @@ public class InController implements Initializable {
             searchWordExactly(wordTarget);
             search_input.setText(wordTarget);
             Word word = controller.getInitDictionary().dictionaryLookup(search_input.getText());
-//            starBookMark(word);
+            starBookMark(word);
         }
     }
 
@@ -109,7 +109,6 @@ public class InController implements Initializable {
 
     public boolean checkBookMark(Word word) {
         ArrayList<Word> wordArrayList = Controller.bookMark.getDictionary().getWordArrayList();
-
 
         for (Word word1 : wordArrayList) {
             if (word.getWord_target().compareTo(word1.getWord_target()) == 0) {

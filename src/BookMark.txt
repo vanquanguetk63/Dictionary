@@ -5,7 +5,7 @@ Dance : Nhay
 Input : Vao
 Output : Ra
 Music : Am nhac
-Play : ChoiPlay : Choi
+Play : Choi
 Professional : Chuyên nghiệp
 Teacher : Co giao
 Dance : Nhay
@@ -13,3 +13,10 @@ Input : Vao
 Output : Ra
 Music : Am nhac
 Hello : Xin chào
+Head : Cái đầu
+He : Anh ta
+He : Anh ta
+Hello : Xin chào
+Headache : Đau đầu
+Heal : Chữa lành
+Head : Cái đầu
