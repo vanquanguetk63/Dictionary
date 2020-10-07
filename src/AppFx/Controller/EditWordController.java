@@ -3,57 +3,53 @@ package AppFx.Controller;
 import base.Word;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Button;
 
 public class EditWordController extends InController{
-    @FXML
-    private TextField old_word, add_new_word, meaning_word;
+    public TextField add_new_word;
+    public TextField meaning_word;
 
     @FXML
     private Button edit_word;
 
-    @FXML
-    private Label view_word_edit, notify;
-
 
     public void handleClickEdit(ActionEvent actionEvent) {
-        Word word = Controller.getInitDictionary().dictionaryLookup(old_word.getText());
-        if (word == null) {
-            notify.setText("Please Enter AN OLD WORD YOU WANT TO EDIT");
-        }
-        else if (word.getWord_target() != null) {
-            if (add_new_word.getText()==null) {
-                notify.setText("Please Enter New Word");
-            }
-            else {
-                if (meaning_word.getText() == "") {
-                    notify.setText("Please Enter Meaning Word");
-                } else {
-                    word = Controller.getInitDictionary().editWordFX(word, add_new_word.getText(), meaning_word.getText());
+        if (add_new_word.getText().isEmpty() || meaning_word.getText().isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Edit");
+            alert.setContentText("Hãy nhập đầy đủ.");
+            alert.setX(750);
+            alert.setY(350);
+            alert.showAndWait();
+        } else {
+            Word word = controller.getInitDictionary().dictionaryLookup(add_new_word.getText());
+            if (word != null) {
+                word = controller.getInitDictionary().editWordFX(word, meaning_word.getText());
+                if (word != null) {
                     initData(word);
                 }
+            } else {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Edit");
+                alert.setContentText("Từ không có trong từ điển, không thể sửa.");
+                alert.setX(750);
+                alert.setY(350);
+                alert.showAndWait();
             }
         }
+
     }
 
-    public void initData1(Controller state) {
-//        this = state;
-    }
 
     public void initData(Word word) {
-        notify.setText("Succesfull!!!");
-        String str = "  New Word:  " + word.getWord_target() + "\n"
-                + "  Meaning:  "  + word.getWord_explain();
-        view_word_edit.setText(str);
-    }
-
-    public TextField getOld_word() {
-        return old_word;
-    }
-
-    public void setOld_word(String str) {
-        this.old_word.setText(str);
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Edit");
+        alert.setX(750);
+        alert.setY(350);
+        alert.setContentText("Sửa từ " + word.getWord_target() + " thành công");
+        alert.showAndWait();
     }
 }

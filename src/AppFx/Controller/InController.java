@@ -52,21 +52,10 @@ public class InController implements Initializable {
     public void searchWordExactly(String wordTarget) {
         Word word = controller.getInitDictionary().dictionaryLookup(wordTarget);
         if (word != null ) {
-            initStar(word);
+            list_view_explain.getItems().setAll(word.getWord_explain());
         }
     }
 
-    public void initStar(Word word) {
-        list_view_explain.getItems().setAll(word.getWord_explain());
-        Image image;
-        if (checkBookMark(word)) {
-            image = new Image("/Resource/icons/icons8_Star_Filled_52px.png");
-        }
-        else {
-            image = new Image("/Resource/icons/icons8_Star_52px.png");
-        }
-        img_book_mark.setImage(image);
-    }
 
     public void handleSearchInput(ActionEvent actionEvent) {
         if (actionEvent.getSource() == search_input) {
@@ -91,8 +80,21 @@ public class InController implements Initializable {
         if (wordTarget != null) {
             searchWordExactly(wordTarget);
             search_input.setText(wordTarget);
+            Word word = controller.getInitDictionary().dictionaryLookup(search_input.getText());
+//            starBookMark(word);
         }
     }
+
+    public void starBookMark(Word word) {
+        if (checkBookMark(word)) {
+            Image image = new Image("/Resource/icons/icons8_Star_Filled_52px.png");
+            img_book_mark.setImage(image);
+        } else {
+            Image image = new Image("/Resource/icons/icons8_Star_52px.png");
+            img_book_mark.setImage(image);
+        }
+    }
+
 
     public void initData(ArrayList<Word> list) {
         ArrayList<String> listTarget = new ArrayList<>();
@@ -108,6 +110,7 @@ public class InController implements Initializable {
     public boolean checkBookMark(Word word) {
         ArrayList<Word> wordArrayList = Controller.bookMark.getDictionary().getWordArrayList();
 
+
         for (Word word1 : wordArrayList) {
             if (word.getWord_target().compareTo(word1.getWord_target()) == 0) {
                 return true;
@@ -116,20 +119,13 @@ public class InController implements Initializable {
         return false;
     }
 
-    public void reload() {
-        String searchText = search_input.getText();
-        if (!searchText.isEmpty()) {
-            searchListWord(searchText);
-        } else {
-            search_list_view.getItems().clear();
-
-        }
-    }
 
     public void reset() {
         search_input.setText("");
         search_list_view.getItems().clear();
         list_view_explain.getItems().clear();
+        Image image = new Image("/Resource/icons/icons8_Star_52px.png");
+        img_book_mark.setImage(image);
     }
 
     @Override

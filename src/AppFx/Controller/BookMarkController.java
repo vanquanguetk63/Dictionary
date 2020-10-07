@@ -22,7 +22,7 @@ public class BookMarkController extends InController {
     public ListView<String> list_view_explain;
 
     public void searchListWord(String wordTarget) {
-        ArrayList<Word> list = Controller.bookMark.searchWordFromFX(wordTarget);
+        ArrayList<Word> list = controller.bookMark.searchWordFromFX(wordTarget);
         if (!list.isEmpty()) {
             ArrayList<String> listTarget = new ArrayList<>();
             for (Word str : list) {
@@ -31,7 +31,7 @@ public class BookMarkController extends InController {
             search_list_view.getItems().setAll(listTarget);
         }
 
-        Word word = Controller.bookMark.dictionaryLookup(wordTarget);
+        Word word = controller.bookMark.dictionaryLookup(wordTarget);
         if (word != null) {
             initExplain(word);
         } else initList(list);
@@ -39,7 +39,7 @@ public class BookMarkController extends InController {
     }
 
     public void searchWordExactly(String wordTarget) {
-        Word word = Controller.bookMark.dictionaryLookup(wordTarget);
+        Word word = controller.bookMark.dictionaryLookup(wordTarget);
         if (word != null) {
             initExplain(word);
         }
@@ -100,7 +100,7 @@ public class BookMarkController extends InController {
     }
 
     public void initData() {
-        ArrayList<Word> wordArrayList = Controller.bookMark.getDictionary().getWordArrayList();
+        ArrayList<Word> wordArrayList = controller.bookMark.getDictionary().getWordArrayList();
         ArrayList<String> listExplain = new ArrayList<>();
         ArrayList<String> listTarget = new ArrayList<>();
         for (Word word : wordArrayList) {

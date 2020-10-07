@@ -134,28 +134,14 @@ public final class GoogleTranslate { //Class marked as final since all methods a
         if(rawData==null){
             return null;
         }
-        String[] raw =  rawData.split("\"");//Parses the JSON
-        for (String str : raw) {
-            System.out.println(str);
-        }
+        String[] raw =  rawData.split("\"");//Parses the JSO
         if(raw.length<2){
             return null;
         }
-        return raw[1];//Returns the translation
+        String str = raw[3] + " : " +  raw[1];
+        return str;//Returns the translation
     }
 
-    public static void main(String[] args) {
-        String str = "Hello";
-        String result = "";
-        try {
-            result = GoogleTranslate.translate("en", "ja" , str);
-            System.out.println(result);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-
-    }
 
     /**
      * Converts a URL to Text

@@ -4,7 +4,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="635.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AppFx.Controller.SearchController">
+<AnchorPane prefHeight="400.0" prefWidth="635.0" xmlns="http://javafx.com/javafx/8.0.261" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AppFx.Controller.SearchController">
    <children>
       <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="360.0" prefWidth="275.0" style="-fx-background-color: #FFFEFD;">
          <children>

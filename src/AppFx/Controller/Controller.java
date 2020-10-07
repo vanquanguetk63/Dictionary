@@ -139,7 +139,6 @@ public class Controller implements Initializable {
             fxmlLoader.setLocation(getClass().getResource("/Resource/fxml/edit_word.fxml"));
             editAnchorPane = fxmlLoader.load();
             editWordController = fxmlLoader.getController();
-            editWordController.initData1(this);
         }
         catch  (IOException e) {
             System.out.println("Error load edit_word.");
@@ -169,7 +168,7 @@ public class Controller implements Initializable {
         return addWordController;
     }
 
-    public static InitDictionary getInitDictionary() {
+    public InitDictionary getInitDictionary() {
         return initDictionary;
     }
 

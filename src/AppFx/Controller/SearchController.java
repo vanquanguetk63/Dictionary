@@ -6,6 +6,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
 public class SearchController  extends  InController{
@@ -16,29 +17,38 @@ public class SearchController  extends  InController{
 
     public void handleBookmark(MouseEvent mouseEvent) {
         if (mouseEvent.getSource() == bookmark) {
-            String str = search_list_view.getSelectionModel().getSelectedItem();
-            Word word = controller.getInitDictionary().dictionaryLookup(str);
-            if (word != null) {
-                Image image;
-                if (checkBookMark(word)) {
-                    image = new Image("/Resource/icons/icons8_Star_52px.png");
-                    controller.bookMark.getDictionary().getWordArrayList().remove(word);
-                    controller.bookMarkController.search_list_view.getItems().remove(word.getWord_target());
-                    controller.bookMarkController.list_view_explain.getItems().remove(word.getWord_explain());
+            if (search_input.getText().isEmpty()) {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Search");
+                alert.setContentText("Bạn chưa chọn từ.");
+                alert.setX(750);
+                alert.setY(350);
+                alert.showAndWait();
+            }
+            else  {
+                String str = search_list_view.getSelectionModel().getSelectedItem();
+                Word word = controller.getInitDictionary().dictionaryLookup(str);
+                if (word != null) {
+                    Image image;
+                    if (checkBookMark(word)) {
+                        image = new Image("/Resource/icons/icons8_Star_52px.png");
+                        controller.bookMark.removeWord(word.getWord_target());
+                        controller.bookMarkController.search_list_view.getItems().remove(word.getWord_target());
+                        controller.bookMarkController.list_view_explain.getItems().remove(word.getWord_explain());
+                    }
+                    else {
+                        image = new Image("/Resource/icons/icons8_Star_Filled_52px.png");
+                        controller.bookMark.getDictionary().getWordArrayList().add(word);
+                        controller.bookMarkController.search_list_view.getItems().add(word.getWord_target());
+                        controller.bookMarkController.list_view_explain.getItems().add(word.getWord_explain());
+                    }
+                    img_book_mark.setImage(image);
+                    System.out.println("2");
                 }
-                else {
-                    image = new Image("/Resource/icons/icons8_Star_Filled_52px.png");
-                    controller.bookMark.getDictionary().getWordArrayList().add(word);
-                    controller.bookMarkController.search_list_view.getItems().add(word.getWord_target());
-                    controller.bookMarkController.list_view_explain.getItems().add(word.getWord_explain());
-                }
-                if (controller == null) {
-                    System.out.println("null");
-                }
-                img_book_mark.setImage(image);
             }
         }
     }
+
 
     public void handleDelete(MouseEvent mouseEvent) {
         if (mouseEvent.getSource() == delete) {
@@ -46,7 +56,7 @@ public class SearchController  extends  InController{
             if (str != null ) {
                 Alert confim = new Alert(Alert.AlertType.CONFIRMATION);
                 confim.setTitle("Delete");
-                confim.setHeaderText("Bạn muốn xóa từ " + search_input.getText() + " chứ?");
+                confim.setHeaderText("Bạn muốn xóa từ '" + search_input.getText() + "' chứ?");
                 confim.setX(750);
                 confim.setY(350);
                 confim.showAndWait();
@@ -57,6 +67,8 @@ public class SearchController  extends  InController{
                         search_input.clear();
                         search_list_view.getItems().remove(word.getWord_target());
                         list_view_explain.getItems().clear();
+                        controller.getInitDictionary().getDictionary().sortWord();
+                        controller.getInitDictionary().exportToFile();
                     }
                 }
             } else {

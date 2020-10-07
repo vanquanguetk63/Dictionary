@@ -18,13 +18,13 @@ public class InitDictionary extends DictionaryManegement  {
         return words;
     }
 
-    public Word editWordFX(Word word, String target, String explain) {
+    public Word editWordFX(Word word, String explain) {
         if (word != null) {
-            word.setWord_target(target);
             word.setWord_explain(explain);
         }
         else {
-            System.out.println("Can not Edit ");
+            Word word2 = null;
+            return  word2;
         }
         return word;
     }

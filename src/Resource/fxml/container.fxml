@@ -9,14 +9,14 @@
    <children>
       <AnchorPane prefHeight="60.0" prefWidth="720.0" style="-fx-background-color: #443A37;" styleClass="header">
          <children>
-            <ImageView fitHeight="60.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="60.0" fitWidth="70.0" layoutX="8.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/batman-clipart-vector.png" />
                </image>
             </ImageView>
-            <Label layoutX="85.0" layoutY="7.0" prefHeight="47.0" prefWidth="308.0" text="Dictionary Application" textAlignment="CENTER" textFill="#e5e3e3" textOverrun="CLIP">
+            <Label layoutX="85.0" layoutY="7.0" prefHeight="47.0" prefWidth="308.0" text="Eng - Vie Dictionary" textAlignment="CENTER" textFill="#e5e3e3" textOverrun="CLIP">
                <font>
-                  <Font name="Arial Narrow" size="28.0" />
+                  <Font name="Times New Roman" size="31.0" />
                </font>
             </Label>
          </children></AnchorPane>
@@ -67,6 +67,6 @@
                </graphic>
             </Button>
          </children></AnchorPane>
-      <AnchorPane fx:id="anchor_view" layoutX="71.0" layoutY="59.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="420.0" prefWidth="650.0" />
+      <AnchorPane fx:id="anchor_view" layoutX="69.0" layoutY="60.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="421.0" prefWidth="653.0" />
    </children>
 </AnchorPane>

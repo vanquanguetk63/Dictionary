@@ -7,6 +7,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class BookMark extends InitDictionary {
@@ -45,6 +46,31 @@ public class BookMark extends InitDictionary {
             out.close();
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    @Override
+    public Word dictionaryLookup(String findWord) {
+        ArrayList<Word> wordArrayList = this.getDictionary().getWordArrayList();
+
+        for (Word word : wordArrayList) {
+            word.setWord_target(word.getWord_target().toLowerCase());
+            if (word.getWord_target().compareTo(findWord) == 0) {
+                return  word;
+            }
+        }
+        return null;
+    }
+
+    public void removeWord(String remove) {
+        remove = remove.toLowerCase();
+        Word word = dictionaryLookup(remove);
+        if (word != null) {
+            this.getDictionary().getWordArrayList().remove(word);
+            System.out.println("Xoa thanh cong");
+        }
+        else {
+            System.out.println("Can not found ");
         }
     }
 
