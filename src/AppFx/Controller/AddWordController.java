@@ -42,4 +42,9 @@ public class AddWordController extends InController {
         alert.showAndWait();
     }
 
+    @Override
+    public void reset() {
+        add_new_word.clear();
+        meaning_word.clear();
+    }
 }

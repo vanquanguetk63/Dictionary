@@ -1,15 +1,10 @@
 Play : Choi
 Professional : Chuyên nghiệp
 Teacher : Co giao
-Dance : Nhay
-Input : Vao
-Output : Ra
-Music : Am nhac
-Play : ChoiPlay : Choi
-Professional : Chuyên nghiệp
-Teacher : Co giao
-Dance : Nhay
 Input : Vao
 Output : Ra
 Music : Am nhac
 Hello : Xin chào
+Head : Cái đầu
+He : Anh ta
+Heal : Chữa lành

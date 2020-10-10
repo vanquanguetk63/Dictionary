@@ -13,7 +13,6 @@ public class SearchController  extends  InController{
     public Label bookmark;
     public Label delete;
     public Label speech;
-    public EditWordController editWordController;
 
     public void handleBookmark(MouseEvent mouseEvent) {
         if (mouseEvent.getSource() == bookmark) {

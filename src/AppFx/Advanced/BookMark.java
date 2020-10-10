@@ -59,13 +59,31 @@ public class BookMark extends InitDictionary {
         }
     }
 
+
+    @Override
+    public void exportToFile() {
+        try {
+            FileWriter myFile = new FileWriter("src/BookMark.txt");
+            int index = 0;
+            while (! this.getDictionary().getWordArrayList().isEmpty() && index < this.getDictionary().getWordArrayList().size()) {
+                Word word = this.getDictionary().getWordArrayList().get(index);
+                myFile.write(word.getWord_target() + " : " + word.getWord_explain() + "\n");
+                index++;
+            }
+            myFile.close();
+        } catch (IOException e) {
+            System.out.println("Error to Write");
+            e.printStackTrace();
+        }
+    }
+
     @Override
     public Word dictionaryLookup(String findWord) {
         ArrayList<Word> wordArrayList = this.getDictionary().getWordArrayList();
-
+        findWord = findWord.toLowerCase();
         for (Word word : wordArrayList) {
-            word.setWord_target(word.getWord_target().toLowerCase());
-            if (word.getWord_target().compareTo(findWord) == 0) {
+            String str = word.getWord_target().toLowerCase();
+            if (str.compareTo(findWord) == 0) {
                 return word;
             }
         }

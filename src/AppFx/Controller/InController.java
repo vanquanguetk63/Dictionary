@@ -120,7 +120,7 @@ public class InController implements Initializable {
 
 
     public void reset() {
-        search_input.setText("");
+        search_input.clear();
         search_list_view.getItems().clear();
         list_view_explain.getItems().clear();
         Image image = new Image("/Resource/icons/icons8_Star_52px.png");

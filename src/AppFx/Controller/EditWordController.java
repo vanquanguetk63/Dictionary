@@ -54,4 +54,10 @@ public class EditWordController extends InController{
         controller.getInitDictionary().getDictionary().sortWord();
         controller.getInitDictionary().exportToFile();
     }
+
+    @Override
+    public void reset() {
+        add_new_word.clear();
+        meaning_word.clear();
+    }
 }

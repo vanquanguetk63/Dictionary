@@ -94,12 +94,16 @@ public class Controller implements Initializable {
             searchController.reset();
             showSearchBTN();
         } else if (actionEvent.getSource() == btn_add) {
+            addWordController.reset();
             showAddBTN();
         } else if (actionEvent.getSource() == btn_edit) {
+            editWordController.reset();
             showEditBTN();
         } else if (actionEvent.getSource() == btn_book_mark) {
+            bookMarkController.reset();
             showBookMark();
         } else if (actionEvent.getSource() == btn_gg) {
+            ggTranslateController.reset();
             showGG();
         }
      }

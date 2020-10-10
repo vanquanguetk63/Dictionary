@@ -12,6 +12,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.web.WebEngine;
@@ -201,5 +202,17 @@ public class GgTranslateController extends InController implements Initializable
             }
         }
 
+    }
+
+    public void handleSelect(ActionEvent actionEvent) {
+        if (combobox.getValue().equals("Nhật - Việt")) {
+          Image image = new Image("/Resource/icons/jap-vie.png");
+          img.setImage(image);
+        }
+    }
+
+    @Override
+    public void reset() {
+        input.clear();
     }
 }
