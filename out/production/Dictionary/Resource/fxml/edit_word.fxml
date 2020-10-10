@@ -9,37 +9,50 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="420.0" prefWidth="653.0" xmlns="http://javafx.com/javafx/8.0.261" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AppFx.Controller.EditWordController">
+<AnchorPane prefHeight="540.0" prefWidth="730.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AppFx.Controller.EditWordController">
    <children>
-      <ImageView fitHeight="420.0" fitWidth="662.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="540.0" fitWidth="730.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/bk_edit.jpg" />
          </image>
       </ImageView>
-      <Label alignment="CENTER" layoutX="189.0" layoutY="23.0" prefHeight="41.0" prefWidth="275.0" style="-fx-border-width: 0 0 1 0; -fx-padding: 0 0 8 0; -fx-border-color: #3F3122;" text="Edit Word" textAlignment="CENTER" textFill="WHITE">
+      <Label alignment="CENTER" layoutX="264.0" layoutY="27.0" prefHeight="41.0" prefWidth="265.0" style="-fx-border-width: 0 0 1 0; -fx-padding: 0 0 8 0; -fx-border-color: #3F3122;" text="Edit Word" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="System Bold" size="29.0" />
          </font>
       </Label>
-      <Label layoutX="196.0" layoutY="112.0" prefHeight="41.0" prefWidth="89.0" text="Old Word" textFill="#e8e5e5">
+      <Label layoutX="170.0" layoutY="124.0" prefHeight="41.0" prefWidth="107.0" text="Old Word" textFill="#e8e5e5">
          <font>
-            <Font name="System Bold" size="17.0" />
+            <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="add_new_word" layoutX="308.0" layoutY="117.0" promptText="Old Word" />
-      <Label layoutX="196.0" layoutY="162.0" prefHeight="41.0" prefWidth="89.0" text="Meaning" textFill="#e8e5e5">
+      <TextField fx:id="add_new_word" layoutX="295.0" layoutY="124.0" prefHeight="41.0" prefWidth="265.0" promptText="Old Word">
          <font>
-            <Font name="System Bold" size="17.0" />
+            <Font size="18.0" />
+         </font></TextField>
+      <Label layoutX="170.0" layoutY="253.0" prefHeight="41.0" prefWidth="89.0" text="Meaning" textFill="#eeeeee">
+         <font>
+            <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="meaning_word" alignment="TOP_LEFT" layoutX="308.0" layoutY="167.0" prefHeight="146.0" prefWidth="149.0" promptText="Meaning">
+      <TextField fx:id="meaning_word" alignment="TOP_LEFT" layoutX="295.0" layoutY="248.0" prefHeight="210.0" prefWidth="265.0" promptText="Meaning">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor>
          <font>
-            <Font size="16.0" />
+            <Font size="18.0" />
          </font>
       </TextField>
-      <Button fx:id="edit_word" layoutX="394.0" layoutY="322.0" mnemonicParsing="false" onAction="#handleClickEdit" prefHeight="25.0" prefWidth="63.0" text="Edit" />
+      <Button fx:id="edit_word" layoutX="486.0" layoutY="473.0" mnemonicParsing="false" onAction="#handleClickEdit" prefHeight="41.0" prefWidth="74.0" text="Edit" />
+      <Label layoutX="170.0" layoutY="187.0" prefHeight="41.0" prefWidth="89.0" text="Spelling" textFill="#e8e5e5">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="spelling" layoutX="295.0" layoutY="187.0" prefHeight="41.0" prefWidth="265.0" promptText="/Example/">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
    </children>
 </AnchorPane>

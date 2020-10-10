@@ -6,13 +6,13 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
 public class SearchController  extends  InController{
     public Label bookmark;
     public Label delete;
     public Label speech;
+
 
     public void handleBookmark(MouseEvent mouseEvent) {
         if (mouseEvent.getSource() == bookmark) {
@@ -31,15 +31,15 @@ public class SearchController  extends  InController{
                     Image image;
                     if (checkBookMark(word)) {
                         image = new Image("/Resource/icons/icons8_Star_52px.png");
-                        controller.bookMark.removeWord(word.getWord_target());
-                        controller.bookMarkController.search_list_view.getItems().remove(word.getWord_target());
-                        controller.bookMarkController.list_view_explain.getItems().remove(word.getWord_explain());
+                        controller.initBookmark.removeWord(word);
+                        controller.bookMarkController.search_list_view_bm.getItems().remove(word.getWord_target());
+//                        controller.bookMarkController.list_view_explain.getItems().remove(word.getWord_explain());
                     }
                     else {
                         image = new Image("/Resource/icons/icons8_Star_Filled_52px.png");
-                        controller.bookMark.addWordToDictionary(word);
-                        controller.bookMarkController.search_list_view.getItems().add(word.getWord_target());
-                        controller.bookMarkController.list_view_explain.getItems().add(word.getWord_explain());
+                        controller.initBookmark.addWordToDictionary(word);
+                        controller.bookMarkController.search_list_view_bm.getItems().add(word.getWord_target());
+//                        controller.bookMarkController.list_view_explain.getItems().add(word.getWord_explain());
                     }
                     img_book_mark.setImage(image);
 
@@ -65,7 +65,8 @@ public class SearchController  extends  InController{
                         controller.getInitDictionary().getDictionary().getWordArrayList().remove(word);
                         search_input.clear();
                         search_list_view.getItems().remove(word.getWord_target());
-                        list_view_explain.getItems().clear();
+                        ipa.setText("/spelling/");
+                        webEngineExplain.loadContent("");
                         controller.getInitDictionary().getDictionary().sortWord();
                         controller.getInitDictionary().exportToFile();
                     }
@@ -101,5 +102,15 @@ public class SearchController  extends  InController{
     @Override
     public void reset() {
         super.reset();
+    }
+
+    public void handleEdit(MouseEvent mouseEvent) {
+        Word word = this.controller.getInitDictionary().dictionaryLookup(search_input.getText());
+        this.controller.clickEdit(word);
+    }
+
+    @Override
+    public void setController(Controller state) {
+        super.setController(state);
     }
 }

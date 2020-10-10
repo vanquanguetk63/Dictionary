@@ -50,7 +50,7 @@ public class InitDictionary extends DictionaryManegement  {
 
     public void saveWordToFile(Word word) {
         try {
-            String data = word.getWord_target() + " : " + word.getWord_explain() +"\n";
+            String data = word.getWord_target() + " @ " + word.getWord_explain() +"\n";
 
             String fileName = "src/Dictionary.txt";
 
@@ -67,5 +67,25 @@ public class InitDictionary extends DictionaryManegement  {
     @Override
     public Word dictionaryLookup(String findWord) {
         return super.dictionaryLookup(findWord);
+    }
+
+    public String[] initExplainWebView(String wordExplain) {
+        String[] list = wordExplain.split("</>");
+        String explain = "";
+        for (int i = 1; i < list.length; i++) {
+            explain += "<p>" + list[i] + "</p>";
+        }
+        list[1] = explain;
+        return list;
+    }
+
+    public String[] initExplain(String wordExplain) {
+        String[] list = wordExplain.split("</>");
+        if (list.length > 2) {
+            for (int i = 2; i < list.length; i++) {
+                list[1] += "\n" + list[i];
+            }
+        }
+        return list;
     }
 }

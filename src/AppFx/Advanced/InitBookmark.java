@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class BookMark extends InitDictionary {
+public class InitBookmark extends InitDictionary {
 
     @Override
     public boolean addWordToDictionary(Word word) {
@@ -26,13 +26,13 @@ public class BookMark extends InitDictionary {
     public void insertFromFile() {
         try {
             System.out.println("insert BM");
-            File file = new File("src/BookMark.txt");
+            File file = new File("src/Bookmark.txt");
             Scanner myReader = new Scanner(file);
             String data;
             String[] data2;
             while (myReader.hasNextLine()) {
                 data = myReader.nextLine();
-                data2 = data.split(" : ");
+                data2 = data.split(" @ ");
                 Word word = new Word(data2[0], data2[1]);
                 this.getDictionary().addWordToDictionary(word);
             }
@@ -46,9 +46,9 @@ public class BookMark extends InitDictionary {
     @Override
     public void saveWordToFile(Word word) {
         try {
-            String data = word.getWord_target() + " : " + word.getWord_explain() + "\n";
+            String data = word.getWord_target() + " @ " + word.getWord_explain() + "\n";
 
-            String fileName = "src/BookMark.txt";
+            String fileName = "src/Bookmark.txt";
 
             BufferedWriter out = new BufferedWriter(
                     new FileWriter(fileName, true));
@@ -63,11 +63,11 @@ public class BookMark extends InitDictionary {
     @Override
     public void exportToFile() {
         try {
-            FileWriter myFile = new FileWriter("src/BookMark.txt");
+            FileWriter myFile = new FileWriter("src/InitBookmark.txt");
             int index = 0;
             while (! this.getDictionary().getWordArrayList().isEmpty() && index < this.getDictionary().getWordArrayList().size()) {
                 Word word = this.getDictionary().getWordArrayList().get(index);
-                myFile.write(word.getWord_target() + " : " + word.getWord_explain() + "\n");
+                myFile.write(word.getWord_target() + " @ " + word.getWord_explain() + "\n");
                 index++;
             }
             myFile.close();
@@ -99,6 +99,26 @@ public class BookMark extends InitDictionary {
         } else {
             System.out.println("Can not found ");
         }
+    }
+
+    public String[] initExplainWebView(String wordExplain) {
+        String[] list = wordExplain.split("</>");
+        String explain = "";
+        for (int i = 1; i < list.length; i++) {
+            explain += "<p>" + list[i] + "</p>";
+        }
+        list[1] = explain;
+        return list;
+    }
+
+    public String[] initExplain(String wordExplain) {
+        String[] list = wordExplain.split("</>");
+        if (list.length > 2) {
+            for (int i = 2; i < list.length; i++) {
+                list[1] += "\n" + list[i];
+            }
+        }
+        return list;
     }
 
 }

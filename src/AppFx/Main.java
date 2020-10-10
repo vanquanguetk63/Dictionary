@@ -14,7 +14,7 @@ public class Main extends Application {
         fxmlLoader.setLocation(getClass().getResource("/Resource/fxml/container.fxml"));
         Parent root = fxmlLoader.load();
         primaryStage.setTitle("Dictionary Application");
-        primaryStage.setScene(new Scene(root, 720, 480));
+        primaryStage.setScene(new Scene(root, 800, 600));
         primaryStage.show();
     }
 

@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 public class EditWordController extends InController{
     public TextField add_new_word;
     public TextField meaning_word;
+    public TextField spelling;
 
     @FXML
     private Button edit_word;
@@ -27,10 +28,21 @@ public class EditWordController extends InController{
         } else {
             Word word = controller.getInitDictionary().dictionaryLookup(add_new_word.getText());
             if (word != null) {
-                word = controller.getInitDictionary().editWordFX(word, meaning_word.getText());
-                if (word != null) {
+                System.out.println(word.getWord_target());
+                String wordTarget = add_new_word.getText();
+                String wordExplain = spelling.getText() + "</>" + meaning_word.getText();
+                word.setWord_target(wordTarget);
+                word.setWord_explain(wordExplain);
+                int index = this.controller.getInitDictionary().binarySearchIndex(this.controller.getInitDictionary().getDictionary().getWordArrayList(),
+                                                                                0,
+                                                                                    this.controller.getInitDictionary().getDictionary().getWordArrayList().size() - 1,
+                                                                                word.getWord_target());
+
+                if (index != -1) {
+                    System.out.println(this.controller.getInitDictionary().getDictionary().getWordArrayList().get(index).getWord_target());
                     initData(word);
                 }
+
             } else {
                 Alert alert = new Alert(Alert.AlertType.WARNING);
                 alert.setTitle("Edit");
@@ -51,7 +63,7 @@ public class EditWordController extends InController{
         alert.setY(350);
         alert.setContentText("Sửa từ " + word.getWord_target() + " thành công");
         alert.showAndWait();
-        controller.getInitDictionary().getDictionary().sortWord();
+
         controller.getInitDictionary().exportToFile();
     }
 
@@ -59,5 +71,10 @@ public class EditWordController extends InController{
     public void reset() {
         add_new_word.clear();
         meaning_word.clear();
+    }
+
+    @Override
+    public void setController(Controller state) {
+        super.setController(state);
     }
 }

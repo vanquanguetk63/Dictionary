@@ -9,20 +9,23 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="420.0" prefWidth="653.0" xmlns="http://javafx.com/javafx/8.0.261" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AppFx.Controller.AddWordController">
+<AnchorPane prefHeight="540.0" prefWidth="730.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AppFx.Controller.AddWordController">
    <children>
-      <ImageView fitHeight="420.0" fitWidth="692.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="540.0" fitWidth="730.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/bk_add.jpg" />
          </image>
       </ImageView>
-      <Label layoutX="141.0" layoutY="106.0" prefHeight="41.0" prefWidth="89.0" text="New Word" textFill="#f8f8f8">
+      <Label layoutX="170.0" layoutY="124.0" prefHeight="41.0" prefWidth="107.0" text="New Word" textFill="#f8f8f8">
          <font>
-            <Font name="System Bold" size="17.0" />
+            <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="add_new_word" layoutX="259.0" layoutY="114.0" prefHeight="25.0" prefWidth="195.0" promptText="New Word" />
-      <TextField fx:id="meaning_word" alignment="TOP_LEFT" layoutX="259.0" layoutY="159.0" prefHeight="146.0" prefWidth="195.0" promptText="Meaning">
+      <TextField fx:id="add_new_word" onAction="#handleInput" layoutX="295.0" layoutY="124.0" prefHeight="41.0" prefWidth="265.0" promptText="New Word">
+         <font>
+            <Font size="20.0" />
+         </font></TextField>
+      <TextField fx:id="meaning_word" alignment="TOP_LEFT" layoutX="295.0" layoutY="248.0" prefHeight="210.0" prefWidth="265.0" promptText="Meaning">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor>
@@ -30,16 +33,26 @@
             <Font size="16.0" />
          </font>
       </TextField>
-      <Label layoutX="141.0" layoutY="159.0" prefHeight="41.0" prefWidth="89.0" text="Meaning" textFill="#fffefe">
+      <Label layoutX="170.0" layoutY="253.0" prefHeight="41.0" prefWidth="89.0" text="Meaning" textFill="#fffefe">
          <font>
-            <Font name="System Bold" size="17.0" />
+            <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <Button fx:id="save_word" layoutX="389.0" layoutY="323.0" mnemonicParsing="false" onAction="#handleClickSave" prefHeight="41.0" prefWidth="65.0" text="Add" />
-      <Label alignment="CENTER" layoutX="196.0" layoutY="27.0" prefHeight="41.0" prefWidth="275.0" style="-fx-border-width: 0 0 1 0; -fx-padding: 0 0 8 0; -fx-border-color: #3F3122;" text="Add A New Word" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="save_word" layoutX="486.0" layoutY="473.0" mnemonicParsing="false" onAction="#handleClickSave" prefHeight="41.0" prefWidth="74.0" text="Add" />
+      <Label alignment="CENTER" layoutX="228.0" layoutY="26.0" prefHeight="41.0" prefWidth="275.0" style="-fx-border-width: 0 0 1 0; -fx-padding: 0 0 8 0; -fx-border-color: #3F3122;" text="Add A New Word" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Times New Roman Bold" size="33.0" />
          </font>
       </Label>
+      <Label layoutX="170.0" layoutY="187.0" prefHeight="41.0" prefWidth="89.0" text="Spelling" textFill="#e8e5e5">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="spelling" layoutX="296.0" layoutY="189.0" prefHeight="41.0" prefWidth="265.0" promptText="/Example/">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
    </children>
 </AnchorPane>

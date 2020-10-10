@@ -164,7 +164,7 @@ public class GgTranslateController extends InController implements Initializable
         String str = input.getText();
         try {
             String mean = GoogleTranslate.translate(laguage, str);
-            String[] spl = mean.split(" : ");
+            String[] spl = mean.split(" @ ");
             SoundGoogle.speak(spl[1], laguage);
         }
         catch (IOException e) {
@@ -214,5 +214,10 @@ public class GgTranslateController extends InController implements Initializable
     @Override
     public void reset() {
         input.clear();
+    }
+
+    @Override
+    public void setController(Controller state) {
+        super.setController(state);
     }
 }

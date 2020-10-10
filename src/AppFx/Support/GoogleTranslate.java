@@ -131,14 +131,29 @@ public final class GoogleTranslate { //Class marked as final since all methods a
         String urlText = generateURL(sourceLanguage, targetLanguage, text);
         URL url = new URL(urlText);
         String rawData = urlToText(url);//Gets text from Google
-        if(rawData==null){
+        if(rawData == null){
             return null;
         }
         String[] raw =  rawData.split("\"");//Parses the JSO
         if(raw.length<2){
             return null;
         }
-        String str = raw[3] + " : " +  raw[1];
+        String str = raw[1];
+        return str;//Returns the translation
+    }
+
+    public static String translateToWeb(String sourceLanguage, String targetLanguage, String text) throws IOException{
+        String urlText = generateURL(sourceLanguage, targetLanguage, text);
+        URL url = new URL(urlText);
+        String rawData = urlToText(url);//Gets text from Google
+        if(rawData == null){
+            return null;
+        }
+        String[] raw =  rawData.split("\"");//Parses the JSO
+        if(raw.length<2){
+            return null;
+        }
+        String str = raw[3] + " @ /null/ " +  "</>" +  raw[1];
         return str;//Returns the translation
     }
 

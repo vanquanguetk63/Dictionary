@@ -5,33 +5,33 @@ import base.Word;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class BookMarkController extends InController {
-    public TextField search_input;
-    public ListView<String> search_list_view;
-    public Label delete;
-    public ImageView sound_btn;
-    public ListView<String> list_view_explain;
-    public Label sound_speech;
+    public TextField search_input_bm;
+    public ListView<String> search_list_view_bm;
+    public WebView web_explain_bm;
+    private WebEngine webEngineExplainBm;
+    public Label ipa_bm;
 
     public void searchListWord(String wordTarget) {
-        ArrayList<Word> list = controller.bookMark.searchWordFromFX(wordTarget);
+        ArrayList<Word> list = controller.initBookmark.searchWordFromFX(wordTarget);
         if (!list.isEmpty()) {
             ArrayList<String> listTarget = new ArrayList<>();
             for (Word str : list) {
                 listTarget.add(str.getWord_target());
             }
-            search_list_view.getItems().setAll(listTarget);
+            search_list_view_bm.getItems().setAll(listTarget);
         }
 
-        Word word = controller.bookMark.dictionaryLookup(wordTarget);
+        Word word = controller.initBookmark.dictionaryLookup(wordTarget);
         if (word != null) {
             initExplain(word);
         } else initList(list);
@@ -39,22 +39,22 @@ public class BookMarkController extends InController {
     }
 
     public void searchWordExactly(String wordTarget) {
-        Word word = controller.bookMark.dictionaryLookup(wordTarget);
+        Word word = controller.initBookmark.dictionaryLookup(wordTarget);
         if (word != null) {
             initExplain(word);
         }
     }
 
     public void handleSearchInput(ActionEvent actionEvent) {
-        if (!search_input.getText().isEmpty()) {
-            searchListWord(search_input.getText());
+        if (!search_input_bm.getText().isEmpty()) {
+            searchListWord(search_input_bm.getText());
         }
 
     }
 
     public void handleChangeInputSearch(KeyEvent keyEvent) {
-        if (keyEvent.getSource() == search_input) {
-            String wordTarget = search_input.getText();
+        if (keyEvent.getSource() == search_input_bm) {
+            String wordTarget = search_input_bm.getText();
             if (!wordTarget.isEmpty()) {
                 searchListWord(wordTarget);
             } else {
@@ -64,69 +64,66 @@ public class BookMarkController extends InController {
     }
 
     public void handleSelectListView(MouseEvent mouseEvent) {
-        String wordTarget = search_list_view.getSelectionModel().getSelectedItem();
+        String wordTarget = search_list_view_bm.getSelectionModel().getSelectedItem();
         if (wordTarget != null) {
             searchWordExactly(wordTarget);
-            search_input.setText(wordTarget);
+            search_input_bm.setText(wordTarget);
         }
     }
 
 
     public void handleDelete(MouseEvent mouseEvent) {
-        if (mouseEvent.getSource() == delete) {
-            String str = search_input.getText();
-            Word word = controller.bookMark.dictionaryLookup(str);
-            if (word != null) {
-                Alert confim = new Alert(Alert.AlertType.CONFIRMATION);
-                confim.setTitle("Delete");
-                confim.setHeaderText("Bạn muốn xóa từ '" + search_input.getText() + "' chứ?");
-                confim.setX(750);
-                confim.setY(350);
-                confim.showAndWait();
-                if (confim.getResult() == ButtonType.OK ) {
-                    controller.bookMark.removeWord(word.getWord_target());
-                    controller.bookMarkController.search_list_view.getItems().remove(word.getWord_target());
-                    controller.bookMarkController.list_view_explain.getItems().remove(word.getWord_explain());
-                    this.controller.bookMark.exportToFile();
-                }
+        String str = search_input_bm.getText();
+        Word word = controller.initBookmark.dictionaryLookup(str);
+        if (word != null) {
+            Alert confim = new Alert(Alert.AlertType.CONFIRMATION);
+            confim.setTitle("Delete");
+            confim.setHeaderText("Bạn muốn xóa từ '" + search_input_bm.getText() + "' chứ?");
+            confim.setX(750);
+            confim.setY(350);
+            confim.showAndWait();
+            if (confim.getResult() == ButtonType.OK ) {
+                controller.initBookmark.removeWord(word.getWord_target());
+                controller.bookMarkController.search_list_view_bm.getItems().remove(word.getWord_target());
+                this.controller.initBookmark.exportToFile();
                 Alert success = new Alert(Alert.AlertType.INFORMATION);
                 success.setTitle("Delete");
                 success.setHeaderText("Xoa thanh cong.");
                 success.setX(750);
                 success.setY(350);
                 success.showAndWait();
-            } else {
-                Alert warning = new Alert(Alert.AlertType.WARNING);
-                warning.setTitle("Delete");
-                warning.setHeaderText("Bạn chưa nhập vào từ muốn xóa.");
-                warning.setX(750);
-                warning.setY(350);
-                warning.showAndWait();
             }
 
+        } else {
+            Alert warning = new Alert(Alert.AlertType.WARNING);
+            warning.setTitle("Delete");
+            warning.setHeaderText("Bạn chưa nhập vào từ muốn xóa.");
+            warning.setX(750);
+            warning.setY(350);
+            warning.showAndWait();
         }
     }
 
     public void handleSpeech(MouseEvent mouseEvent) {
-        if (mouseEvent.getSource() == sound_speech) {
-            String str = search_input.getText();
-            if (str.isEmpty()) {
-                Alert warning = new Alert(Alert.AlertType.WARNING);
-                warning.setTitle("Speech");
-                warning.setHeaderText("Bạn chưa nhập vào từ muốn nghe");
-                warning.setX(750);
-                warning.setY(350);
-                warning.showAndWait();
-            }
-            else {
-                SoundGoogle.speak(str, "en");
-            }
+        String str = search_input_bm.getText();
+        if (str.isEmpty()) {
+            Alert warning = new Alert(Alert.AlertType.WARNING);
+            warning.setTitle("Speech");
+            warning.setHeaderText("Bạn chưa nhập vào từ muốn nghe");
+            warning.setX(750);
+            warning.setY(350);
+            warning.showAndWait();
+        }
+        else {
+            SoundGoogle.speak(str, "en");
         }
     }
 
     public void initExplain(Word word) {
-        list_view_explain.getItems().clear();
-        list_view_explain.getItems().setAll(word.getWord_explain());
+        String[] list = this.controller.initBookmark.initExplainWebView(word.getWord_explain());
+        ipa_bm.setText(list[0]);
+        webEngineExplainBm = web_explain_bm.getEngine();
+        webEngineExplainBm.loadContent(list[1]);
     }
 
     public void initList(ArrayList<Word> word) {
@@ -136,32 +133,42 @@ public class BookMarkController extends InController {
             wordTarget.add(str.getWord_target());
             wordExplain.add(str.getWord_explain());
         }
-        search_list_view.getItems().setAll(wordTarget);
-        list_view_explain.getItems().setAll(wordExplain);
+        search_list_view_bm.getItems().setAll(wordTarget);
     }
 
     public void initData() {
-        ArrayList<Word> wordArrayList = controller.bookMark.getDictionary().getWordArrayList();
-        ArrayList<String> listExplain = new ArrayList<>();
+        ArrayList<Word> wordArrayList = controller.initBookmark.getDictionary().getWordArrayList();
         ArrayList<String> listTarget = new ArrayList<>();
         for (Word word : wordArrayList) {
             listTarget.add(word.getWord_target());
-            listExplain.add(word.getWord_explain());
         }
-        search_list_view.getItems().setAll(listTarget);
-        list_view_explain.getItems().setAll(listExplain);
+        search_list_view_bm.getItems().setAll(listTarget);
     }
 
     public void reset() {
-        search_input.setText("");
-        search_list_view.getItems().clear();
-        list_view_explain.getItems().clear();
+        search_input_bm.setText("");
+        search_list_view_bm.getItems().clear();
+        ipa_bm.setText("");
+        webEngineExplainBm = web_explain_bm.getEngine();
+        webEngineExplainBm.loadContent("");
         initData();
-//        this.controller.bookMark.insertFromFile();
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         initData();
+    }
+
+    @Override
+    public void setController(Controller state) {
+        super.setController(state);
+    }
+
+    public void handleEdit(MouseEvent mouseEvent) {
+        Word word = this.controller.initBookmark.dictionaryLookup(search_input_bm.getText());
+        this.controller.clickEdit(word);
+    }
+
+    public void handleBookmark(MouseEvent mouseEvent) {
     }
 }

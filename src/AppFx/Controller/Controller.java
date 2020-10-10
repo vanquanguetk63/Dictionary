@@ -1,7 +1,8 @@
 package AppFx.Controller;
 
-import AppFx.Advanced.BookMark;
+import AppFx.Advanced.InitBookmark;
 import AppFx.Advanced.InitDictionary;
+import base.Word;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,9 +17,11 @@ import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
     protected static InitDictionary initDictionary = new InitDictionary();
-    protected static BookMark bookMark = new BookMark();
+    protected static InitBookmark initBookmark = new InitBookmark();
 
-    public Controller() {}
+    public Controller() {
+        System.out.println("11");
+    }
 
     @FXML
     private Button btn_search;
@@ -53,6 +56,9 @@ public class Controller implements Initializable {
 
 
     public void setAnchor(AnchorPane anchorPane) {
+        if (anchorPane == null){
+            System.out.println("hello");
+        }
         this.anchor_view.getChildren().setAll(anchorPane);
         this.curAnchor = anchorPane;
     }
@@ -70,11 +76,18 @@ public class Controller implements Initializable {
     }
 
     public void showEditBTN() {
-        this.setAnchor(editAnchorPane);
+        this.setAnchor(this.getEditAnchorPane());
         this.resetStyleNav();
         btn_edit.setStyle("-fx-background-color:  #394357;");
     }
 
+    public void clickEdit(Word word) {
+        showEditBTN();
+        String[] list = this.getInitDictionary().initExplain(word.getWord_explain());
+        editWordController.add_new_word.setText(word.getWord_target());
+        editWordController.meaning_word.setText(list[1]);
+        editWordController.spelling.setText(list[0]);
+    }
 
     public void showBookMark() {
         this.setAnchor(bookMarkPane);
@@ -124,6 +137,7 @@ public class Controller implements Initializable {
             fxmlLoader.setLocation(getClass().getResource("/Resource/fxml/search_screen.fxml"));
             searchAnchorPane = fxmlLoader.load();
             searchController = fxmlLoader.getController();
+            searchController.setController(this);
         } catch (IOException e) {
             System.out.println("Error load SearchBTN.");
         }
@@ -133,6 +147,7 @@ public class Controller implements Initializable {
             fxmlLoader.setLocation(getClass().getResource("/Resource/fxml/add_word.fxml"));
             addAnchorPane = fxmlLoader.load();
             addWordController = fxmlLoader.getController();
+            addWordController.setController(this);
         }
         catch (IOException e) {
             System.out.println("Error load add_word.");
@@ -143,6 +158,8 @@ public class Controller implements Initializable {
             fxmlLoader.setLocation(getClass().getResource("/Resource/fxml/edit_word.fxml"));
             editAnchorPane = fxmlLoader.load();
             editWordController = fxmlLoader.getController();
+            editWordController.setController(this);
+
         }
         catch  (IOException e) {
             System.out.println("Error load edit_word.");
@@ -153,8 +170,9 @@ public class Controller implements Initializable {
             fxmlLoader.setLocation(getClass().getResource("/Resource/fxml/book_mark.fxml"));
             bookMarkPane = fxmlLoader.load();
             bookMarkController = fxmlLoader.getController();
+            bookMarkController.setController(this);
         } catch (IOException e) {
-            System.out.println("Error load BookMark.");
+            System.out.println("Error load InitBookmark.");
         }
 
         try {
@@ -162,6 +180,7 @@ public class Controller implements Initializable {
             fxmlLoader.setLocation(getClass().getResource("/Resource/fxml/gg_translate.fxml"));
             ggTranslatePane = fxmlLoader.load();
             ggTranslateController = fxmlLoader.getController();
+            ggTranslateController.setController(this);
         } catch (IOException e) {
             System.out.println("Error load gg.");
         }
@@ -185,4 +204,11 @@ public class Controller implements Initializable {
     }
 
 
+    public AnchorPane getEditAnchorPane() {
+        return editAnchorPane;
+    }
+
+    public void setEditAnchorPane(AnchorPane editAnchorPane) {
+        this.editAnchorPane = editAnchorPane;
+    }
 }

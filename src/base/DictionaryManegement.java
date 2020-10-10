@@ -46,10 +46,10 @@ public class DictionaryManegement {
         }
     }
 
-    public void removeWord(String remove) {
-        Word word = dictionaryLookup(remove);
+    public void removeWord(Word word) {
         if (word != null) {
             dictionary.getWordArrayList().remove(word);
+
             System.out.println("Xoa thanh cong");
         }
         else {
@@ -67,7 +67,7 @@ public class DictionaryManegement {
             String[] data2;
             while (myReader.hasNextLine()) {
                 data = myReader.nextLine();
-                data2 = data.split( " : " );
+                data2 = data.split( " @ " );
                 Word word = new Word(data2[0], data2[1]);
                 dictionary.addWordToDictionary(word);
             }
@@ -86,7 +86,7 @@ public class DictionaryManegement {
             int index = 0;
             while (! dictionary.getWordArrayList().isEmpty() && index < dictionary.getWordArrayList().size()) {
                 Word word = dictionary.getWordArrayList().get(index);
-                myFile.write(word.getWord_target() + " : " + word.getWord_explain() + "\n");
+                myFile.write(word.getWord_target() + " @ " + word.getWord_explain() + "\n");
                 index++;
             }
             myFile.close();
@@ -135,6 +135,7 @@ public class DictionaryManegement {
         }
         return list;
     }
+
 
     public Dictionary getDictionary() {
         return dictionary;
