@@ -51,10 +51,15 @@ public class InController implements Initializable {
         if (!list.isEmpty()) {
             initData(list);
         } else {
-            search_list_view.getItems().clear();
-            ipa.setText("/spelling/");
-            webEngineExplain = web_explain.getEngine();
-            webEngineExplain.loadContent("");
+            ArrayList<String> listStr = this.controller.getInitDictionary().searchIfNone(wordTarget);
+            if (listStr != null) {
+                search_list_view.getItems().setAll(listStr);
+            } else {
+                search_list_view.getItems().clear();
+                ipa.setText("/spelling/");
+                webEngineExplain = web_explain.getEngine();
+                webEngineExplain.loadContent("");
+            }
         }
 
     }

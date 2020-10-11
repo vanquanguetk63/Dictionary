@@ -59,6 +59,7 @@ public class AddWordController extends InController {
     public void reset() {
         add_new_word.clear();
         meaning_word.clear();
+        spelling.clear();
     }
 
     @Override

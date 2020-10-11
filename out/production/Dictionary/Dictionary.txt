@@ -2,7 +2,7 @@
 /fff/</>gdfgfd @ /fff/</>gdfgfd
 A la carte @ /'ɑ:lɑ:'kɑ:t/ </> *  phó từ </> - theo món, gọi theo món, đặt theo món </> =to dine a_la_carte+ ăn cơm gọi theo món
 A la mode @ /,ɑ:lə'moud/ </> *  phó từ </> - hợp thời trang, đúng mốt
-Aaa @ /aaa/</>aaa
+Aaa @ /aff/</>dsgsg
 Aard-wolf @ /'ɑ:d,wulf/ </> *  danh từ </> - (động vật học) chó sói đất (nam phi)
 Abandonment @ /ə'bændənmənt/ </> *  danh từ </> - sự bỏ, sự từ bỏ, sự bỏ rơi, sự ruồng bỏ </> - tình trạng bị bỏ rơi, tình trạng bị ruồng bỏ </> - sự phóng túng, sự tự do, sự buông thả
 Abasement @ /ə'beismənt/ </> *  danh từ </> - sự làm hạ phẩm giá, sự làm mất thể diện, sự làm nhục
@@ -1141,6 +1141,7 @@ Cause-list @ /'kɔ:zlist/ </> *  danh từ </> - (pháp lý) danh sách những 
 Causeway @ /'kɔ:zwei/ </> *  danh từ </> - đường đắp cao (qua vùng lầy lội) </> - bờ đường đắp cao (cho khách đi bộ) </> *  ngoại động từ </> - đường đắp cao (qua vùng lầy lội)
 Cavalier @ /,kævə'liə/ </> *  danh từ </> - kỵ sĩ </> - người khéo chiều phụ nữ, người nịnh đầm </> *  tính từ </> - kiêu ngạo, ngạo mạng; xẵng </> - ung dung </> - không trịnh trọng, phóng túng
 Cavicorne @ /'kævikɔ:n/ </> *  tính từ </> - (động vật học) </> - có sừng rỗng
+Cccc @ /null/ </> cccc
 Ceil @ /si:l/ </> *  ngoại động từ </> - làm trần (nhà) </> *  nội động từ </> - (hàng không) bay tới độ cao tối đa
 Celerity @ /si'leriti/ </> *  danh từ </> - sự mau chóng, sự mau lẹ; tính cấp tốc
 Celluloid @ /'seljulɔid/ </> *  danh từ </> - (hoá học) xenluloit
@@ -1775,6 +1776,7 @@ Day-lily @ /'dei,lili/ </> *  danh từ </> - (thực vật học) cây hoa hiê
 Day-long @ /'deilɔɳ/ </> *  tính từ & phó từ </> - suốt ngày, cả ngày
 Daybreak @ /'deibreik/ </> *  danh từ </> - lúc tảng sáng, lúc rạng đông
 Ddd @ /ddd/</>gdfgdf
+Dddd @ /null/ </> dddd
 Deacon @ /'di:kən/ </> *  danh từ </> - (tôn giáo) người trợ tế </> - (từ mỹ,nghĩa mỹ) bộ da dê mới đẻ ((cũng) deacon hide) </> *  nội động từ </> - (từ mỹ,nghĩa mỹ) tụng kinh ê a </> *  ngoại động từ </> - (từ mỹ,nghĩa mỹ) bày bán để hàng tốt (hoa quả...) lên trên, để hàng tốt ra ngoài; làm giả mạo (hàng hoá...) </> =to deacon a basket of apples+ bày bán những quả tốt ở trên rổ </> =to deacon wine+ pha rượu
 Dead @ /ded/ </> *  tính từ </> - chết (người, vật, cây cối) </> =to strike somebody dead+ đánh ai chết tươi </> =to shoot somebody dead+ bắn chết ai </> - tắt, tắt ngấm </> =dead fire+ lửa tắt </> =dead volcano+ núi lửa tắt ngấm </> =dead valve+ bóng đèn (rađiô) cháy (không dùng được nữa) </> - chết, không hoạt động; không sinh sản; hết hiệu lực; không dùng được nữa </> =dead money+ tiền để nằm chết, không sinh lợi </> =dead stock+ vốn chết; hàng không bán được </> =a dead spring+ lò xo hết đàn hồi </> =dead axle+ trục không xoay được nữa </> =the motor is dead+ động cơ ngừng chạy </> =dead language+ từ ngữ </> =dead window+ cửa sổ giả </> - tê cóng, tê bại, tê liệt </> =my fingers are dead+ ngón tay tôi tê cóng đi </> - xỉn, không bóng (màu, vàng...); đục, không vang (âm thanh...) </> =dead gold+ vàng xỉn </> =dead sound+ tiếng đục không vang </> - không màng đến, không biết đến, chai điếng, điếc đặc không chịu nghe </> =dead to honour+ không màng danh vọng </> =dead to reason+ điếc đặc không chịu nghe lẽ phải </> =dead to all sense of honour+ không còn biết thế nào là danh dự nữa </> - thình lình, hoàn toàn </> =to come a dead stop+ đứng sững lại </> =a dead faint+ sự chết ngất </> =dead calm+ sự hoàn toàn lặng gió (biển) </> =dead silence+ sự im phăng phắc </> =dead failure+ thất bại hoàn toàn </> =dead certainty+ sự tin chắc hoàn toàn; điều hoàn toàn chắc chắn </> - (điện học) không có thế hiệu </> - (từ mỹ,nghĩa mỹ),  (thông tục) ngu xuẩn, đần độn </> - đã chết và chôn </> - đã qua từ lâu </> - đã bỏ đi không dùng đến từ lâu </> - chết thật rồi, chết cứng ra rồi </> - (thông tục) chai không, chai đã uống hết </> - gần chết, thừa sống thiếu chết; chết giấc, bất tỉnh nhân sự </> - người chết thì không còn tiết lộ bí mật được nữa </> *  danh từ </> - (the dead) những người đã chết, những người đã khuất </> - giữa </> =in the dead of winter+ giữa mùa đông </> =in the dead of night+ lúc nửa đêm, lúc đêm khuya thanh vắng </> - hãy để cho quá khứ chôn vùi quá khứ đi; hãy quên quá khứ đi </> - (từ mỹ,nghĩa mỹ),  (thông tục) nhất định, kiên quyết </> - đứng đắn, không đùa </> *  phó từ </> - đúng vào, ngay vào, thẳng vào </> =dead in the centre+ đúng ngay vào giữa </> =dead on time+ đúng giờ </> =the wind was dead agianst us+ gió tạt thẳng vào mặt chúng tôi </> - hoàn toàn </> =dead asleep+ ngủ say như chết </> =dead drunk+ say bí tỉ, say không biết gì trời đất </> =dead tired+ mệt rã rời </> - hằn lại, sững lại </> =to stop dead+ đứng sững lại </> - kiên quyết phản đối ai
 Dead end @ /'ded'end/ </> *  danh từ </> - đường cùng, ngõ cụt </> - nước bí, tình trạng bế tắc không lối thoát
@@ -2319,7 +2321,7 @@ Editors-in-chief @ /'editəzin'tʃi:f/ </> *  danh từ,  số nhiều editors-i
 Educate @ /'edju:keit/ </> *  ngoại động từ </> - giáo dục, cho ăn học </> - dạy (súc vật...) </> - rèn luyện (kỹ năng...)
 Educator @ /'edju:keitə/ </> *  danh từ </> - thầy dạy </> - nhà sư phạm
 Educt @ /'i:dʌkt/ </> *  danh từ </> - (hoá học) vật chiết
-eee @ /fff/</>eyvgfd
+Eee @ /fff/</>eyvgfd
 Eel-pie @ /'i:lpai/ </> *  danh từ </> - pa-tê nóng nhồi thịt lươn
 Effacement @ /i'feismənt/ </> *  danh từ </> - sự xoá, sự xoá bỏ </> - sự làm lu mờ; sự át </> - sự tự cho mình là không quan trọng; sự nép mình, sự lánh ((nghĩa bóng))
 Efferent @ /'efərənt/ </> *  tính từ </> - (sinh vật học) ra, đi ra (mạch máu); ly tâm (dây thần kinh) </> =efferent nerve+ dây thần kinh ly tâm, dây thần kinh vận động
@@ -3555,6 +3557,7 @@ Heteromorphism @ /,hetərou'mɔ:fizm/ </> *  danh từ </> - tính khác hình
 Hexachord @ /'heksəkɔ:d/ </> *  danh từ </> - (âm nhạc) chuỗi sáu âm
 Hexahedral @ /'heksə'hedrəl/ </> *  tính từ </> - (toán học) sáu mặt (hình)
 Hexametrical @ /,heksə'metrik/ (hexametrical) </> *  tính từ </> - (thuộc) thơ sáu âm tiết </> - có sáu âm tiết (câu thơ)
+Hhh @ /null/ </> hhh
 Hiatus @ /hai'eitəs/ </> *  danh từ,  số nhiều hiatuses  /hai'eitəsiz/ </> - chỗ gián đoạn, chỗ đứt quãng, chỗ thiếu sót (trong một loạt sự vật, một bài tường thuật, một loạt chứng cớ...) </> - (ngôn ngữ học) chỗ vấp hai nguyên âm
 Hibernant @ /'haibə:nənt/ </> *  tính từ </> - ngủ đông (động vật) </> - nghỉ đông ở vùng ấm áp (người) </> *  danh từ </> - con vật ngủ đông </> - người nghỉ đông ở vùng ấm áp
 Hiccup @ /'hikʌp/ (hiccup) </> *  danh từ </> - (y học) nấc </> *  nội động từ </> - nấc </> *  ngoại động từ </> - vừa nói vừa nấc
@@ -4393,6 +4396,7 @@ Kitten @ /'kitn/ </> *  danh từ </> - mèo con </> - cô gái đỏng đảnh,
 Kittenish @ /'kitniʃ/ </> *  tính từ </> - (thuộc) mèo con; như mèo con </> - đùa nghịch loăng quăng như mèo con </> - đỏng đảnh, õng ẹo (cô gái)
 Kittiwake @ /'kitiweik/ </> *  danh từ </> - (động vật học) mòng biển xira
 Kittle @ /'kitl/ </> *  tính từ </> - khó khăn, khó xử (vấn đề, trường hợp...) </> - khó tính, hay giận, khó chơi (người) </> - (nghĩa bóng) những người khó chơi; những việc khó xử
+Kkkk @ /null/ </> kkkk
 Kleptomania @ /,kleptou'meinjə/ </> *  danh từ </> - thói ăn cắp vặt, thói tắt mắt
 Knar @ /nɑ:/ </> *  danh từ </> - mắt, mấu (ở thân cây, rễ cây)
 Kneeling position @ /'ni:liɳpə'ziʃn/ </> *  danh từ </> - (quân sự) tư thế quỳ bắn

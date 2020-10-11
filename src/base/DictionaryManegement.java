@@ -46,6 +46,11 @@ public class DictionaryManegement {
         }
     }
 
+    public void editWord(Word word, int index) {
+        this.getDictionary().getWordArrayList().get(index).setWord_target(word.getWord_target());
+        this.getDictionary().getWordArrayList().get(index).setWord_explain(word.getWord_explain());
+    }
+
     public void removeWord(Word word) {
         if (word != null) {
             dictionary.getWordArrayList().remove(word);
@@ -136,6 +141,43 @@ public class DictionaryManegement {
         return list;
     }
 
+
+    public ArrayList<String> searchIfNone(String str) {
+        ArrayList<String> listNew = new ArrayList<>();
+        ArrayList<Word> list = this.getDictionary().getWordArrayList();
+        str = str.toLowerCase();
+        for (Word word : list ) {
+            String lower = word.getWord_target().toLowerCase();
+
+            int m = str.length();
+            int n = lower.length();
+
+            if (n >= m && n <= m +2) {
+                if (isSubSequence(str, lower, str.length(), lower.length())) {
+                    listNew.add(word.getWord_target());
+                }
+            }
+        }
+
+        return listNew;
+    }
+
+    public  boolean isSubSequence(String str1, String str2, int m, int n) {
+        // Base Cases
+        if (str1.length() - m >= 2)
+            return true;
+        if (n == 0 )
+            return false;
+
+        // If last characters of two strings are matching
+        char a = str1.charAt(m - 1);
+        String b = Character.toString(a);
+        if (str2.contains(b)) {
+            return isSubSequence(str1, str2, m-1, n);
+        } else {
+            return isSubSequence(str1, str2, m, n-1);
+        }
+    }
 
     public Dictionary getDictionary() {
         return dictionary;

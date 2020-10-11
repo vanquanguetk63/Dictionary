@@ -11,7 +11,7 @@
 
 <AnchorPane prefHeight="540.0" prefWidth="730.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AppFx.Controller.AddWordController">
    <children>
-      <ImageView fitHeight="540.0" fitWidth="730.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="540.0" fitWidth="732.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/bk_add.jpg" />
          </image>
@@ -21,7 +21,7 @@
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <TextField fx:id="add_new_word" onAction="#handleInput" layoutX="295.0" layoutY="124.0" prefHeight="41.0" prefWidth="265.0" promptText="New Word">
+      <TextField fx:id="add_new_word" layoutX="295.0" layoutY="124.0" onAction="#handleInput" prefHeight="41.0" prefWidth="265.0" promptText="New Word">
          <font>
             <Font size="20.0" />
          </font></TextField>

@@ -195,6 +195,11 @@ public class Controller implements Initializable {
         return initDictionary;
     }
 
+    public static InitBookmark getInitBookmark() {
+        return initBookmark;
+    }
+
+
     public BookMarkController getBookMarkController() {
         return bookMarkController;
     }

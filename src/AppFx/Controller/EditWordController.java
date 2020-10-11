@@ -31,15 +31,22 @@ public class EditWordController extends InController{
                 System.out.println(word.getWord_target());
                 String wordTarget = add_new_word.getText();
                 String wordExplain = spelling.getText() + "</>" + meaning_word.getText();
-                word.setWord_target(wordTarget);
-                word.setWord_explain(wordExplain);
+                word = new Word(wordTarget, wordExplain);
                 int index = this.controller.getInitDictionary().binarySearchIndex(this.controller.getInitDictionary().getDictionary().getWordArrayList(),
                                                                                 0,
                                                                                     this.controller.getInitDictionary().getDictionary().getWordArrayList().size() - 1,
                                                                                 word.getWord_target());
-
                 if (index != -1) {
-                    System.out.println(this.controller.getInitDictionary().getDictionary().getWordArrayList().get(index).getWord_target());
+                    this.controller.getInitDictionary().editWord(word, index);
+                }
+
+                //update trong list bookmark.
+                int indexOfBm = this.controller.initBookmark.indexOfWordBm(word);
+                if (indexOfBm != -1) {
+                    this.controller.getInitBookmark().editWord(word, indexOfBm);
+                }
+
+                if (index != -1 || indexOfBm != -1) {
                     initData(word);
                 }
 
@@ -71,6 +78,7 @@ public class EditWordController extends InController{
     public void reset() {
         add_new_word.clear();
         meaning_word.clear();
+        spelling.clear();
     }
 
     @Override

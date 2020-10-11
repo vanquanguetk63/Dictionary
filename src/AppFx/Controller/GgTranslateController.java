@@ -14,6 +14,8 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
@@ -29,10 +31,7 @@ public class GgTranslateController extends InController implements Initializable
     public Button add;
     public ImageView speech_in;
     public ImageView speech_out;
-    @FXML
-    public WebView target;
     public ImageView img;
-    private WebEngine webEngineTarget;
 
     @FXML
     public WebView webview;
@@ -45,24 +44,23 @@ public class GgTranslateController extends InController implements Initializable
         try{
             boolean isEmpty = combobox.getSelectionModel().isEmpty();
             if (!isEmpty){
-                webEngineTarget.loadContent("");
                 webEngineWord.loadContent("");
                 if(combobox.getValue().equals("Anh - Việt")) {
-                    isTranslating("vi");
+                    isTranslating("en", "vi");
                 } else if (combobox.getValue().equals("Việt - Anh")) {
-                    isTranslating("en");
+                    isTranslating("vi", "en");
                 } else if (combobox.getValue().equals("Nhật - Việt")) {
-                    isTranslating("vi");
+                    isTranslating("ja", "vi");
                 } else if (combobox.getValue().equals("Việt - Nhật")) {
-                    isTranslating("ja");
+                    isTranslating("vi", "ja");
                 } else if (combobox.getValue().equals("Pháp - Việt")) {
-                    isTranslating("vi");
+                    isTranslating("fr", "vi");
                 } else if (combobox.getValue().equals("Việt - Pháp")) {
-                    isTranslating("fr");
+                    isTranslating("vi", "fr");
                 } else if (combobox.getValue().equals("Hàn - Việt")) {
-                    isTranslating("vi");
+                    isTranslating("ko", "vi");
                 } else if (combobox.getValue().equals("Việt - Hàn")) {
-                    isTranslating("ko");
+                    isTranslating("vi", "ko");
                 }
             }
             else {
@@ -79,14 +77,14 @@ public class GgTranslateController extends InController implements Initializable
         }
     }
 
-    public void isTranslating(String language) {
+    public void isTranslating(String from, String to) {
         try {
             String words = input.getText();
-            String mean = GoogleTranslate.translate(language, words);
-            String[] str = mean.split(" : ");
-            String htmlword = "<html>" + str[0] +"</html>";
-            webEngineTarget.loadContent(htmlword);
-            String html = "<html>" + str[1] +"</html>";
+            String mean = GoogleTranslate.translateToWeb(from, to, words);
+            String[] str = mean.split(" @ ");
+            String[] dataExplain = str[1].split("</>");
+            input.setText(str[0]);
+            String html = "<html>" + dataExplain[1] +"</html>";
             webEngineWord.loadContent(html);
         }
         catch (Exception ex) {
@@ -98,9 +96,9 @@ public class GgTranslateController extends InController implements Initializable
         try {
             if(combobox.getValue().equals("Anh - Việt")) {
                 String words = input.getText();
-                String mean = GoogleTranslate.translate("vi", words);
+                String mean = GoogleTranslate.translateToWeb("en", "vi", words);
                 if (!mean.isEmpty()) {
-                    String[] str = mean.split(" : ");
+                    String[] str = mean.split(" @ ");
                     Word word = new Word(str[0], str[1]);
                     if (controller.getInitDictionary().addWordToDictionary(word)) {
                         Alert notify = new Alert(Alert.AlertType.INFORMATION);
@@ -109,6 +107,7 @@ public class GgTranslateController extends InController implements Initializable
                         notify.setX(750);
                         notify.setY(350);
                         notify.showAndWait();
+                        controller.getInitDictionary().getDictionary().sortWord();
                         controller.getInitDictionary().exportToFile();
                     } else {
                         Alert notify = new Alert(Alert.AlertType.WARNING);
@@ -135,7 +134,6 @@ public class GgTranslateController extends InController implements Initializable
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        webEngineTarget = target.getEngine();
         webEngineWord = webview.getEngine();
         combobox.setItems(language);
     }
@@ -205,19 +203,68 @@ public class GgTranslateController extends InController implements Initializable
     }
 
     public void handleSelect(ActionEvent actionEvent) {
-        if (combobox.getValue().equals("Nhật - Việt")) {
-          Image image = new Image("/Resource/icons/jap-vie.png");
-          img.setImage(image);
+        Image image;
+        if (combobox.getValue().equals("Nhật - Việt") || combobox.getValue().equals("Việt - Nhật") ) {
+            image = new Image("/Resource/icons/jap-vie.png");
+
+        } else if (combobox.getValue().equals("Việt - Pháp") || combobox.getValue().equals("Pháp - Việt") ) {
+            image = new Image("/Resource/icons/jap-vie.png");
+        } else if (combobox.getValue().equals("Hàn - Việt") || combobox.getValue().equals("Việt - Hàn") ) {
+            image = new Image("/Resource/icons/jap-vie.png");
+        } else {
+            image = new Image("/Resource/icons/el-vie.png");
         }
+        img.setImage(image);
     }
 
     @Override
     public void reset() {
         input.clear();
+        Image image = new Image("/Resource/icons/el-vie.png");
+        img.setImage(image);
     }
 
     @Override
     public void setController(Controller state) {
         super.setController(state);
+    }
+
+    public void handleEnter(KeyEvent keyEvent) {
+        if (keyEvent.getCode() == KeyCode.ENTER) {
+            try{
+                boolean isEmpty = combobox.getSelectionModel().isEmpty();
+                if (!isEmpty){
+                    webEngineWord.loadContent("");
+                    if(combobox.getValue().equals("Anh - Việt")) {
+                        isTranslating("en", "vi");
+                    } else if (combobox.getValue().equals("Việt - Anh")) {
+                        isTranslating("vi", "en");
+                    } else if (combobox.getValue().equals("Nhật - Việt")) {
+                        isTranslating("ja", "vi");
+                    } else if (combobox.getValue().equals("Việt - Nhật")) {
+                        isTranslating("vi", "ja");
+                    } else if (combobox.getValue().equals("Pháp - Việt")) {
+                        isTranslating("fr", "vi");
+                    } else if (combobox.getValue().equals("Việt - Pháp")) {
+                        isTranslating("vi", "fr");
+                    } else if (combobox.getValue().equals("Hàn - Việt")) {
+                        isTranslating("ko", "vi");
+                    } else if (combobox.getValue().equals("Việt - Hàn")) {
+                        isTranslating("vi", "ko");
+                    }
+                }
+                else {
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Notification");
+                    alert.setContentText("Bạn chưa chọn chế độ dịch.");
+                    alert.setX(750);
+                    alert.setY(350);
+                    alert.show();
+                }
+            }
+            catch (Exception ex){
+                System.out.println(ex.getMessage());
+            }
+        }
     }
 }

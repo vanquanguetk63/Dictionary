@@ -63,7 +63,7 @@ public class InitBookmark extends InitDictionary {
     @Override
     public void exportToFile() {
         try {
-            FileWriter myFile = new FileWriter("src/InitBookmark.txt");
+            FileWriter myFile = new FileWriter("src/Bookmark.txt");
             int index = 0;
             while (! this.getDictionary().getWordArrayList().isEmpty() && index < this.getDictionary().getWordArrayList().size()) {
                 Word word = this.getDictionary().getWordArrayList().get(index);
@@ -99,6 +99,20 @@ public class InitBookmark extends InitDictionary {
         } else {
             System.out.println("Can not found ");
         }
+    }
+
+    public int indexOfWordBm(Word word) {
+        ArrayList<Word> list = this.getDictionary().getWordArrayList();
+        int index = 0;
+
+        for (Word checkWord : list) {
+            String str = checkWord.getWord_target().toLowerCase();
+            if (str.compareTo(word.getWord_target().toLowerCase()) == 0) {
+                return index;
+            }
+            index++;
+        }
+        return -1;
     }
 
     public String[] initExplainWebView(String wordExplain) {

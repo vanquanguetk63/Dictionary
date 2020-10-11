@@ -11,7 +11,7 @@
 
 <AnchorPane prefHeight="540.0" prefWidth="730.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AppFx.Controller.EditWordController">
    <children>
-      <ImageView fitHeight="540.0" fitWidth="730.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="540.0" fitWidth="732.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/bk_edit.jpg" />
          </image>

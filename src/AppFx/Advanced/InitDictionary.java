@@ -18,16 +18,7 @@ public class InitDictionary extends DictionaryManegement  {
         return words;
     }
 
-    public Word editWordFX(Word word, String explain) {
-        if (word != null) {
-            word.setWord_explain(explain);
-        }
-        else {
-            Word word2 = null;
-            return  word2;
-        }
-        return word;
-    }
+
 
     public boolean addWordToDictionary(Word word) {
         if (isExist(word) == false){
@@ -68,6 +59,8 @@ public class InitDictionary extends DictionaryManegement  {
     public Word dictionaryLookup(String findWord) {
         return super.dictionaryLookup(findWord);
     }
+
+
 
     public String[] initExplainWebView(String wordExplain) {
         String[] list = wordExplain.split("</>");
