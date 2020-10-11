@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.web.WebView?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="730.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.AppFx.Controller.BookMarkController">
+   <children>
+      <AnchorPane layoutX="14.0" layoutY="16.0" prefHeight="508.0" prefWidth="339.0" style="-fx-background-color: #FFFEFD;">
+         <children>
+            <TextField fx:id="search_input_bm" layoutX="14.0" layoutY="14.0" onAction="#handleSearchInput" onKeyReleased="#handleChangeInputSearch" prefHeight="49.0" prefWidth="310.0" promptText="Search..." />
+            <ListView fx:id="search_list_view_bm" layoutX="14.0" layoutY="71.0" onMouseClicked="#handleSelectListView" prefHeight="417.0" prefWidth="310.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="367.0" layoutY="24.0" prefHeight="508.0" prefWidth="363.0" style="-fx-background-color: #FFFEFD;">
+         <children>
+            <Label contentDisplay="GRAPHIC_ONLY" layoutX="131.0" layoutY="16.0" onMouseClicked="#handleSpeech" prefHeight="49.0" prefWidth="40.0" style="-fx-cursor: Hand;" text="Label">
+               <graphic>
+                  <ImageView fitHeight="43.0" fitWidth="48.0" onMouseClicked="#handleSpeech" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: pointer;">
+                     <image>
+                        <Image url="@../icons/icons8_Speaker_48px.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Label>
+            <HBox layoutX="220.0" layoutY="16.0" prefHeight="49.0" prefWidth="129.0">
+               <children>
+                  <Label contentDisplay="GRAPHIC_ONLY" onMouseClicked="#handleBookmark" prefHeight="49.0" prefWidth="40.0" style="-fx-cursor: Hand;">
+                     <graphic>
+                        <ImageView fx:id="img_book_mark" fitHeight="43.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/icons8_Star_52px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+                  <Label  contentDisplay="GRAPHIC_ONLY" onMouseClicked="#handleDelete" prefHeight="49.0" prefWidth="40.0" style="-fx-cursor: Hand;" text="Label">
+                     <graphic>
+                        <ImageView fitHeight="37.0" fitWidth="41.0" onMouseClicked="#handleDelete" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: poin;">
+                           <image>
+                              <Image url="@../icons/icons8_Trash_52px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+                  <Label onMouseClicked="#handleEdit" prefHeight="49.0" prefWidth="37.0" style="-fx-cursor: Hand;">
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="59.0" onMouseClicked="#handleSpeech" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: pointer;">
+                           <image>
+                              <Image url="@../icons/icons8_Edit_52px_2.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+               </children>
+            </HBox>
+            <Label fx:id="ipa_bm" layoutX="10.0" layoutY="16.0" prefHeight="49.0" prefWidth="121.0" style="-fx-underline: true;" text="/spelling/">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <WebView fx:id="web_explain_bm" layoutX="10.0" layoutY="72.0" prefHeight="417.0" prefWidth="345.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

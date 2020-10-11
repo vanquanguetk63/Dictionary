@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.AppFx.Controller.Controller">
+   <children>
+      <AnchorPane prefHeight="60.0" prefWidth="800.0" style="-fx-background-color: #443A37;" styleClass="header">
+         <children>
+            <ImageView fitHeight="60.0" fitWidth="76.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/batman-clipart-vector.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="257.0" layoutY="8.0" prefHeight="47.0" prefWidth="308.0" text="Dictionary EV" textAlignment="CENTER" textFill="#e5e3e3" textOverrun="CLIP">
+               <font>
+                  <Font name="Times New Roman Bold" size="32.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+      <AnchorPane layoutY="60.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="549.0" prefWidth="70.0" style="-fx-background-color: #443A37;" styleClass="nav_button">
+         <children>
+            <Button fx:id="btn_search" contentDisplay="GRAPHIC_ONLY" layoutY="14.0" mnemonicParsing="false" onAction="#handleClickEvent" prefHeight="60.0" prefWidth="70.0" style="-fx-background-color: #443A37;">
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/icons8_Search_48px.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button fx:id="btn_add" contentDisplay="GRAPHIC_ONLY" layoutY="74.0" mnemonicParsing="false" onAction="#handleClickEvent" prefHeight="66.0" prefWidth="70.0" style="-fx-background-color: #443A37;" textFill="#1e1b1b">
+               <graphic>
+                  <ImageView fitHeight="46.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/icons8_Plus_Math_52px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btn_edit" contentDisplay="GRAPHIC_ONLY" layoutY="140.0" mnemonicParsing="false" onAction="#handleClickEvent" prefHeight="60.0" prefWidth="70.0" style="-fx-background-color: #443A37;">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/icons8_Edit_52px_white.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btn_book_mark" contentDisplay="GRAPHIC_ONLY" layoutY="200.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleClickEvent" prefHeight="60.0" prefWidth="70.0" style="-fx-background-color: #443A37;">
+               <graphic>
+                  <ImageView fitHeight="43.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/icons8_Bookmark_Page_50px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btn_gg" contentDisplay="GRAPHIC_ONLY" layoutY="268.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleClickEvent" prefHeight="60.0" prefWidth="70.0" style="-fx-background-color: #443A37;">
+               <graphic>
+                  <ImageView fitHeight="57.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/gg.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children></AnchorPane>
+      <AnchorPane fx:id="anchor_view" layoutX="69.0" layoutY="60.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="730.0" />
+   </children>
+</AnchorPane>
