@@ -1,13 +1,14 @@
-package main.java.AppFx.Controller;
+package AppFx.Controller;
 
+import AppFx.Support.SoundGoogle;
+import base.Word;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
-import main.java.base.SoundGoogle;
-import main.java.base.Word;
+
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -77,7 +78,7 @@ public class BookMarkController extends InController {
         if (word != null) {
             Alert confim = new Alert(Alert.AlertType.CONFIRMATION);
             confim.setTitle("Delete");
-            confim.setHeaderText("Bạn muốn xóa từ '" + search_input_bm.getText() + "' chứ?");
+            confim.setHeaderText("Bạn muốn xóa từ '" + search_input_bm.getText() + "' ra khỏi list bookmark chứ?");
             confim.setX(750);
             confim.setY(350);
             confim.showAndWait();
@@ -87,7 +88,7 @@ public class BookMarkController extends InController {
                 this.controller.initBookmark.exportToFile();
                 Alert success = new Alert(Alert.AlertType.INFORMATION);
                 success.setTitle("Delete");
-                success.setHeaderText("Xoa thanh cong.");
+                success.setHeaderText("Xóa thành công.");
                 success.setX(750);
                 success.setY(350);
                 success.showAndWait();
@@ -108,7 +109,7 @@ public class BookMarkController extends InController {
         if (str.isEmpty()) {
             Alert warning = new Alert(Alert.AlertType.WARNING);
             warning.setTitle("Speech");
-            warning.setHeaderText("Bạn chưa nhập vào từ muốn nghe");
+            warning.setHeaderText("Bạn chưa nhập vào từ muốn nghe.");
             warning.setX(750);
             warning.setY(350);
             warning.showAndWait();
@@ -166,6 +167,7 @@ public class BookMarkController extends InController {
     public void handleEdit(MouseEvent mouseEvent) {
         Word word = this.controller.initBookmark.dictionaryLookup(search_input_bm.getText());
         this.controller.clickEdit(word);
+        this.ipa_bm.setText("/spelling/");
     }
 
     public void handleBookmark(MouseEvent mouseEvent) {

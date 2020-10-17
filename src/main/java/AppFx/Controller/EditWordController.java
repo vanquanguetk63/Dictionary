@@ -1,15 +1,16 @@
-package main.java.AppFx.Controller;
+package AppFx.Controller;
 
+import base.Word;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Button;
-import main.java.base.Word;
 
 public class EditWordController extends InController{
     public TextField add_new_word;
-    public TextField meaning_word;
+    public TextArea meaning_word;
     public TextField spelling;
 
     @FXML
@@ -42,7 +43,7 @@ public class EditWordController extends InController{
                 //update trong list bookmark.
                 int indexOfBm = this.controller.initBookmark.indexOfWordBm(word);
                 if (indexOfBm != -1) {
-                    this.controller.getInitBookmark().editWord(word, indexOfBm);
+                    this.controller.initBookmark.editWord(word, indexOfBm);
                 }
 
                 if (index != -1 || indexOfBm != -1) {

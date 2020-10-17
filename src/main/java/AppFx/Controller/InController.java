@@ -1,6 +1,6 @@
-package main.java.AppFx.Controller;
+package AppFx.Controller;
 
-
+import base.Word;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -14,7 +14,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
-import main.java.base.Word;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -107,10 +106,10 @@ public class InController implements Initializable {
 
     public void starBookMark(Word word) {
         if (checkBookMark(word)) {
-            Image image = new Image("main/resources/icons/icons8_Star_Filled_52px.png");
+            Image image = new Image("/icons/icons8_Star_Filled_52px.png");
             img_book_mark.setImage(image);
         } else {
-            Image image = new Image("main/resources/icons/icons8_Star_52px.png");
+            Image image = new Image("/icons/icons8_Star_52px.png");
             img_book_mark.setImage(image);
         }
     }
@@ -142,7 +141,7 @@ public class InController implements Initializable {
         ipa.setText("/spelling/");
         webEngineExplain = web_explain.getEngine();
         webEngineExplain.loadContent("");
-        Image image = new Image("main/resources/icons/icons8_Star_52px.png");
+        Image image = new Image("/icons/icons8_Star_52px.png");
         img_book_mark.setImage(image);
     }
 

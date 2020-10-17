@@ -1,7 +1,6 @@
-package main.java.base;
+package base;
 
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class DictionaryCommandline {

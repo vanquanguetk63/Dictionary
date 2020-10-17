@@ -1,14 +1,14 @@
-package main.java.AppFx.Controller;
+package AppFx.Controller;
 
+import AppFx.Advanced.InitBookmark;
+import AppFx.Advanced.InitDictionary;
+import base.Word;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
-import main.java.AppFx.Advanced.InitBookmark;
-import main.java.AppFx.Advanced.InitDictionary;
-import main.java.base.Word;
 
 
 import java.io.IOException;
@@ -87,6 +87,7 @@ public class Controller implements Initializable {
         editWordController.add_new_word.setText(word.getWord_target());
         editWordController.meaning_word.setText(list[1]);
         editWordController.spelling.setText(list[0]);
+
     }
 
     public void showBookMark() {
@@ -134,7 +135,7 @@ public class Controller implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("/main/resources/fxml/search_screen.fxml"));
+            fxmlLoader.setLocation(getClass().getResource("/fxml/search_screen.fxml"));
             searchAnchorPane = fxmlLoader.load();
             searchController = fxmlLoader.getController();
             searchController.setController(this);
@@ -144,7 +145,7 @@ public class Controller implements Initializable {
 
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("/main/resources/fxml/add_word.fxml"));
+            fxmlLoader.setLocation(getClass().getResource("/fxml/add_word.fxml"));
             addAnchorPane = fxmlLoader.load();
             addWordController = fxmlLoader.getController();
             addWordController.setController(this);
@@ -155,7 +156,7 @@ public class Controller implements Initializable {
 
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("/main/resources/fxml/edit_word.fxml"));
+            fxmlLoader.setLocation(getClass().getResource("/fxml/edit_word.fxml"));
             editAnchorPane = fxmlLoader.load();
             editWordController = fxmlLoader.getController();
             editWordController.setController(this);
@@ -167,7 +168,7 @@ public class Controller implements Initializable {
 
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("/main/resources/fxml/book_mark.fxml"));
+            fxmlLoader.setLocation(getClass().getResource("/fxml/book_mark.fxml"));
             bookMarkPane = fxmlLoader.load();
             bookMarkController = fxmlLoader.getController();
             bookMarkController.setController(this);
@@ -177,7 +178,7 @@ public class Controller implements Initializable {
 
         try {
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("/main/resources/fxml/gg_translate.fxml"));
+            fxmlLoader.setLocation(getClass().getResource("/fxml/gg_translate.fxml"));
             ggTranslatePane = fxmlLoader.load();
             ggTranslateController = fxmlLoader.getController();
             ggTranslateController.setController(this);
@@ -193,10 +194,6 @@ public class Controller implements Initializable {
 
     public InitDictionary getInitDictionary() {
         return initDictionary;
-    }
-
-    public static InitBookmark getInitBookmark() {
-        return initBookmark;
     }
 
 

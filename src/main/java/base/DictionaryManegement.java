@@ -1,4 +1,4 @@
-package main.java.base;
+package base;
 
 
 import java.io.File;
@@ -54,7 +54,7 @@ public class DictionaryManegement {
 
     public void removeWord(Word word) {
         if (word != null) {
-            dictionary.getWordArrayList().remove(word);
+            this.getDictionary().getWordArrayList().remove(word);
 
             System.out.println("Xoa thanh cong");
         }
@@ -153,8 +153,8 @@ public class DictionaryManegement {
             int m = str.length();
             int n = lower.length();
 
-            if (n >= m && n <= m +2) {
-                if (isSubSequence(str, lower, str.length(), lower.length())) {
+            if (n >= m -1  && n <= m + 2) {
+                if (isSubSequence(str, lower, 0, m)) {
                     listNew.add(word.getWord_target());
                 }
             }
@@ -165,17 +165,30 @@ public class DictionaryManegement {
 
     public  boolean isSubSequence(String str1, String str2, int m, int n) {
         // Base Cases
-        if (str1.length() - m >= 2)
-            return true;
+
+        if (str1.length() == 2) {
+            if (m == 2)
+                return true;
+        } else if (str1.length() > 2) {
+            if (m > 2) return true;
+        }
         if (n == 0 )
             return false;
+        if (str2.contains(str1)) {
+            return true;
+        }
 
         // If last characters of two strings are matching
-        char a = str1.charAt(m - 1);
+        char a = str1.charAt(m);
         String b = Character.toString(a);
         if (str2.contains(b)) {
-            return isSubSequence(str1, str2, m-1, n);
-        } else {
+//            if (m == 0) {
+//                if (str2.charAt(0) != a) {
+//                    return false;
+//                }
+//            }
+            return isSubSequence(str1, str2, m+1 , n);
+        }  else {
             return isSubSequence(str1, str2, m, n-1);
         }
     }

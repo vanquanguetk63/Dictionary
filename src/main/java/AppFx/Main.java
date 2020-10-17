@@ -1,4 +1,4 @@
-package main.java.AppFx;
+package AppFx;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -11,7 +11,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("/main/resources/fxml/container.fxml"));
+        fxmlLoader.setLocation(getClass().getResource("/fxml/container.fxml"));
         Parent root = fxmlLoader.load();
         primaryStage.setTitle("Dictionary Application");
         primaryStage.setScene(new Scene(root, 800, 600));

@@ -1,4 +1,5 @@
-package main.java.AppFx.Support;
+package AppFx.Support;
+
 import java.io.IOException;
 import java.io.Reader;
 import java.io.UnsupportedEncodingException;

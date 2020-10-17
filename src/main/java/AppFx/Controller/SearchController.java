@@ -1,13 +1,12 @@
-package main.java.AppFx.Controller;
+package AppFx.Controller;
 
-
+import AppFx.Support.SoundGoogle;
+import base.Word;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
-import main.java.base.SoundGoogle;
-import main.java.base.Word;
 
 public class SearchController  extends  InController{
     public Label bookmark;
@@ -31,14 +30,15 @@ public class SearchController  extends  InController{
                 if (word != null) {
                     Image image;
                     if (checkBookMark(word)) {
-                        image = new Image("/Resource/icons/icons8_Star_52px.png");
-                        controller.initBookmark.removeWord(word);
-                        controller.bookMarkController.search_list_view_bm.getItems().remove(word.getWord_target());
-//                        controller.bookMarkController.list_view_explain.getItems().remove(word.getWord_explain());
+                        image = new Image("/icons/icons8_Star_52px.png");
+                        controller.initBookmark.removeWord(word.getWord_target());
+                        controller.initBookmark.exportToFileBM();
+
                     }
                     else {
-                        image = new Image("/Resource/icons/icons8_Star_Filled_52px.png");
+                        image = new Image("/icons/icons8_Star_Filled_52px.png");
                         controller.initBookmark.addWordToDictionary(word);
+                        System.out.println(controller.initBookmark.getDictionary().getWordArrayList().size());
                         controller.bookMarkController.search_list_view_bm.getItems().add(word.getWord_target());
 //                        controller.bookMarkController.list_view_explain.getItems().add(word.getWord_explain());
                     }

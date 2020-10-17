@@ -1,18 +1,20 @@
-package main.java.AppFx.Controller;
+package AppFx.Controller;
 
 
+import AppFx.Support.GoogleTranslate;
+import base.Word;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import main.java.AppFx.Support.GoogleTranslate;
-import main.java.base.Word;
+
 
 import java.io.IOException;
 
 public class AddWordController extends InController {
     public TextField add_new_word;
-    public TextField meaning_word;
+    public TextArea meaning_word;
     public Button save_word;
     public TextField spelling;
 
@@ -65,7 +67,9 @@ public class AddWordController extends InController {
 
     @Override
     public void setController(Controller state) {
+
         super.setController(state);
+        meaning_word.setWrapText(true);
     }
 
     public void handleInput(ActionEvent actionEvent) {

@@ -1,6 +1,8 @@
-package main.java.AppFx.Controller;
+package AppFx.Controller;
 
-
+import AppFx.Support.GoogleTranslate;
+import AppFx.Support.SoundGoogle;
+import base.Word;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -17,9 +19,6 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
-import main.java.AppFx.Support.GoogleTranslate;
-import main.java.base.SoundGoogle;
-import main.java.base.Word;
 
 import java.io.IOException;
 import java.net.URL;
@@ -163,8 +162,7 @@ public class GgTranslateController extends InController implements Initializable
         String str = input.getText();
         try {
             String mean = GoogleTranslate.translate(laguage, str);
-            String[] spl = mean.split(" @ ");
-            SoundGoogle.speak(spl[1], laguage);
+            SoundGoogle.speak(mean, laguage);
         }
         catch (IOException e) {
             e.printStackTrace();
@@ -206,14 +204,14 @@ public class GgTranslateController extends InController implements Initializable
     public void handleSelect(ActionEvent actionEvent) {
         Image image;
         if (combobox.getValue().equals("Nhật - Việt") || combobox.getValue().equals("Việt - Nhật") ) {
-            image = new Image("main/resources/icons/jap-vie.png");
+            image = new Image("/icons/jap-vie.png");
 
         } else if (combobox.getValue().equals("Việt - Pháp") || combobox.getValue().equals("Pháp - Việt") ) {
-            image = new Image("main/resources/icons/jap-vie.png");
+            image = new Image("/icons/jap-vie.png");
         } else if (combobox.getValue().equals("Hàn - Việt") || combobox.getValue().equals("Việt - Hàn") ) {
-            image = new Image("main/resources/icons/jap-vie.png");
+            image = new Image("/icons/jap-vie.png");
         } else {
-            image = new Image("main/resources/icons/el-vie.png");
+            image = new Image("/icons/el-vie.png");
         }
         img.setImage(image);
     }
@@ -221,7 +219,7 @@ public class GgTranslateController extends InController implements Initializable
     @Override
     public void reset() {
         input.clear();
-        Image image = new Image("main/resources/icons/el-vie.png");
+        Image image = new Image("/icons/el-vie.png");
         img.setImage(image);
     }
 

@@ -1,9 +1,8 @@
-package main.java.AppFx.Advanced;
+package AppFx.Advanced;
 
 
-
-import main.java.base.DictionaryManegement;
-import main.java.base.Word;
+import base.DictionaryManegement;
+import base.Word;
 
 import java.io.BufferedWriter;
 
@@ -21,10 +20,8 @@ public class InitDictionary extends DictionaryManegement {
         return words;
     }
 
-
-
     public boolean addWordToDictionary(Word word) {
-        if (isExist(word) == false){
+        if (isExist(word) == false) {
             this.getDictionary().getWordArrayList().add(word);
             this.saveWordToFile(word);
             return true;
@@ -44,9 +41,9 @@ public class InitDictionary extends DictionaryManegement {
 
     public void saveWordToFile(Word word) {
         try {
-            String data = word.getWord_target() + " @ " + word.getWord_explain() +"\n";
+            String data = word.getWord_target() + " @ " + word.getWord_explain() + "\n";
 
-            String fileName = "src/Dictionary.txt";
+            String fileName = "src/main/java/resources/Dictionary.txt";
 
             BufferedWriter out = new BufferedWriter(
                     new FileWriter(fileName, true));
@@ -62,7 +59,6 @@ public class InitDictionary extends DictionaryManegement {
     public Word dictionaryLookup(String findWord) {
         return super.dictionaryLookup(findWord);
     }
-
 
 
     public String[] initExplainWebView(String wordExplain) {

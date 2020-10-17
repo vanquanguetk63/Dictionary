@@ -1,7 +1,6 @@
-package main.java.AppFx.Advanced;
+package AppFx.Advanced;
 
-
-import main.java.base.Word;
+import base.Word;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -48,7 +47,7 @@ public class InitBookmark extends InitDictionary {
         try {
             String data = word.getWord_target() + " @ " + word.getWord_explain() + "\n";
 
-            String fileName = "src/Bookmark.txt";
+            String fileName = "src/main/resources/Bookmark.txt";
 
             BufferedWriter out = new BufferedWriter(
                     new FileWriter(fileName, true));
@@ -59,9 +58,7 @@ public class InitBookmark extends InitDictionary {
         }
     }
 
-
-    @Override
-    public void exportToFile() {
+    public void exportToFileBM() {
         try {
             FileWriter myFile = new FileWriter("src/main/resources/Bookmark.txt");
             int index = 0;
