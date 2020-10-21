@@ -148,7 +148,7 @@ public class BookMarkController extends InController {
     public void reset() {
         search_input_bm.setText("");
         search_list_view_bm.getItems().clear();
-        ipa_bm.setText("");
+        this.ipa_bm.setText("/spelling/");
         webEngineExplainBm = web_explain_bm.getEngine();
         webEngineExplainBm.loadContent("");
         initData();
@@ -161,6 +161,7 @@ public class BookMarkController extends InController {
 
     @Override
     public void setController(Controller state) {
+        this.ipa_bm.setText("/spelling/");
         super.setController(state);
     }
 

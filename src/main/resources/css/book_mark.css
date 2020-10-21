@@ -1,0 +1,7 @@
+.list-cell
+{
+    -fx-font: 16pt "Arial";
+}
+body {
+    -fx-background-color: #000000;
+}

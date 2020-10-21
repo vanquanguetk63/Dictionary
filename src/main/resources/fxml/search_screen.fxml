@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.scene.web.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.web.WebView?>
 
 <AnchorPane prefHeight="540.0" prefWidth="730.0" stylesheets="@../css/search_screen.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AppFx.Controller.SearchController">
    <children>
@@ -60,7 +64,7 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <WebView fx:id="web_explain" layoutX="10.0" layoutY="72.0" prefHeight="417.0" prefWidth="345.0" />
+            <WebView id="web_explain" fx:id="web_explain" layoutX="10.0" layoutY="72.0" prefHeight="417.0" prefWidth="345.0" />
             <Label fx:id="speech" layoutX="148.0" layoutY="16.0" onMouseClicked="#handleSpeech" prefHeight="49.0" prefWidth="37.0" style="-fx-cursor: Hand;" />
          </children></AnchorPane>
    </children>

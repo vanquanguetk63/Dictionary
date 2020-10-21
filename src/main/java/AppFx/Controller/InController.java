@@ -12,6 +12,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Font;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 
@@ -66,10 +67,15 @@ public class InController implements Initializable {
     public void searchWordExactly(String wordTarget) {
         Word word = controller.getInitDictionary().dictionaryLookup(wordTarget);
         if (word != null ) {
+            Font.loadFont(
+                    InController.class.getResource("/font/Rubik-Regular.ttf").toExternalForm(),
+                    30);
             String[] str = this.controller.getInitDictionary().initExplainWebView(word.getWord_explain());
             ipa.setText(str[0]);
             webEngineExplain = web_explain.getEngine();
+            webEngineExplain.setUserStyleSheetLocation(getClass().getResource("/css/search_screen.css").toString());
             webEngineExplain.loadContent(str[1]);
+
         }
     }
 

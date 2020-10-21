@@ -1,29 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="540.0" prefWidth="730.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AppFx.Controller.AddWordController">
    <children>
-      <ImageView fitHeight="540.0" fitWidth="732.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="547.0" fitWidth="732.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/bk_add.jpg" />
          </image>
       </ImageView>
-      <Label layoutX="170.0" layoutY="124.0" prefHeight="41.0" prefWidth="107.0" text="New Word" textFill="#f8f8f8">
+      <Label blendMode="ADD" layoutX="113.0" layoutY="125.0" prefHeight="41.0" prefWidth="125.0" text="New Word" textFill="#f8f8f8">
          <font>
-            <Font name="System Bold" size="20.0" />
+            <Font name="System Bold" size="22.0" />
          </font>
       </Label>
-      <TextField fx:id="add_new_word" layoutX="295.0" layoutY="124.0" onAction="#handleInput" prefHeight="41.0" prefWidth="265.0" promptText="New Word">
+      <TextField fx:id="add_new_word" layoutX="258.0" layoutY="125.0" onAction="#handleInput" prefHeight="41.0" prefWidth="303.0" promptText="New Word">
          <font>
             <Font size="18.0" />
          </font></TextField>
-      <Label layoutX="170.0" layoutY="253.0" prefHeight="41.0" prefWidth="89.0" text="Meaning" textFill="#fffefe">
+      <Label blendMode="ADD" layoutX="113.0" layoutY="254.0" prefHeight="41.0" prefWidth="103.0" text="Meaning" textFill="#fffefe">
          <font>
-            <Font name="System Bold" size="20.0" />
+            <Font name="System Bold" size="22.0" />
          </font>
       </Label>
       <Button fx:id="save_word" layoutX="486.0" layoutY="473.0" mnemonicParsing="false" onAction="#handleClickSave" prefHeight="41.0" prefWidth="74.0" text="Add" />
@@ -32,17 +36,17 @@
             <Font name="Times New Roman Bold" size="33.0" />
          </font>
       </Label>
-      <Label layoutX="170.0" layoutY="187.0" prefHeight="41.0" prefWidth="89.0" text="Spelling" textFill="#e8e5e5">
+      <Label blendMode="ADD" layoutX="113.0" layoutY="188.0" prefHeight="41.0" prefWidth="114.0" text="Spelling" textFill="#e8e5e5">
          <font>
-            <Font name="System Bold" size="20.0" />
+            <Font name="System Bold" size="22.0" />
          </font>
       </Label>
-      <TextField fx:id="spelling" layoutX="296.0" layoutY="189.0" prefHeight="41.0" prefWidth="265.0" promptText="/Example/">
+      <TextField fx:id="spelling" layoutX="258.0" layoutY="188.0" prefHeight="41.0" prefWidth="303.0" promptText="/Example/">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <TextArea fx:id="meaning_word" layoutX="296.0" layoutY="248.0" prefHeight="210.0" prefWidth="265.0" promptText="Meaning">
+      <TextArea fx:id="meaning_word" layoutX="258.0" layoutY="245.0" prefHeight="210.0" prefWidth="303.0" promptText="Meaning">
          <font>
             <Font size="18.0" />
          </font></TextArea>

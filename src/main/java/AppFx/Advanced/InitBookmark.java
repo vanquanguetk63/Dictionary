@@ -42,8 +42,7 @@ public class InitBookmark extends InitDictionary {
         }
     }
 
-    @Override
-    public void saveWordToFile(Word word) {
+    public void saveWordToFileBm(Word word) {
         try {
             String data = word.getWord_target() + " @ " + word.getWord_explain() + "\n";
 

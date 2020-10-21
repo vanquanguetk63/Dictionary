@@ -1,4 +1,9 @@
 .list-cell
 {
-    -fx-font: 18pt "Arial";
+    -fx-font: 16pt "Arial";
+}
+body {
+    -fx-font: 18pt "Rubik-Regular";
+    -fx-background-color: #13B7D1;
+
 }

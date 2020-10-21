@@ -67,7 +67,9 @@ public class InitDictionary extends DictionaryManegement {
         for (int i = 1; i < list.length; i++) {
             explain += "<p>" + list[i] + "</p>";
         }
+
         list[1] = explain;
+
         return list;
     }
 
