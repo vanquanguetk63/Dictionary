@@ -1,8 +1,7 @@
-/ddf/</>gdsgsd @ /ddf/</>gdsgsd
 /fff/</>gdfgfd @ /fff/</>gdfgfd
 A la carte @ /'ɑ:lɑ:'kɑ:t/ </> *  phó từ </> - theo món, gọi theo món, đặt theo món </> =to dine a_la_carte+ ăn cơm gọi theo món
 A la mode @ /,ɑ:lə'moud/ </> *  phó từ </> - hợp thời trang, đúng mốt
-Aaa @ /aff/</>dsgsg
+Aaa @ /aa/</>aaa
 Aard-wolf @ /'ɑ:d,wulf/ </> *  danh từ </> - (động vật học) chó sói đất (nam phi)
 Abandonment @ /ə'bændənmənt/ </> *  danh từ </> - sự bỏ, sự từ bỏ, sự bỏ rơi, sự ruồng bỏ </> - tình trạng bị bỏ rơi, tình trạng bị ruồng bỏ </> - sự phóng túng, sự tự do, sự buông thả
 Abasement @ /ə'beismənt/ </> *  danh từ </> - sự làm hạ phẩm giá, sự làm mất thể diện, sự làm nhục
@@ -651,6 +650,7 @@ Baulk @ /bɔ:k/ (baulk) </> *  danh từ </> - vật chướng ngại; sự cả
 Bay-salt @ /'bei'sɔ:lt/ </> *  danh từ </> - muối biển
 Bayou @ /'baiu:/ </> *  danh từ </> - nhánh sông
 Bbb @ /bb/</>dsgsd
+Bbbc @ /bb/</>fff
 Beach @ /bi:tʃ/ </> *  danh từ </> - sỏi cát (ở bãi biển) </> - bãi biển </> *  ngoại động từ </> - cho (tàu thuyền) lên cạn
 Beach-comber @ /'bi:tʃ,koumə/ </> *  danh từ </> - người sống trên những đảo ở thái bình dương; người sống lang thang trên bờ biển </> - đợt sóng tràn vào bờ
 Beach-master @ /'bi:tʃ,mɑ:stə/ </> *  danh từ </> - (quân sự) sĩ quan chỉ huy cuộc đổ bộ
@@ -3513,6 +3513,7 @@ Hell-bent @ /'helbent/ </> *  tính từ </> - (từ mỹ,nghĩa mỹ),  (từ l
 Hellebore @ /'helibɔ:/ </> *  danh từ </> - (thực vật học) cây trị điên </> - cây lê lư
 Hellenist @ /'helinist/ </> *  danh từ </> - nhà nghiên cứu cổ hy-lạp </> - người theo văn hoá hy-lạp (nói tiếng hy-lạp nhưng không phải chính cống là người hy-lạp)
 Hellish @ /'heliʃ/ </> *  tính từ </> - (thuộc) địa ngục; như địa ngục, tối tăm; như ma quỷ </> - khủng khiếp; ghê tởm; xấu xa
+Hello @ /null/ </> xin chào
 Helpful @ /'helpful/ </> *  tính từ </> - giúp đỡ; giúp ích; có ích
 Helpmate @ /'helpmeit/ (helpmeet) </> *  danh từ </> - đồng chí, đồng sự, người cộng tác </> - bạn đời (vợ, chồng)
 Hem @ /hem/ </> *  danh từ </> - đường viền (áo, quần...) </> *  ngoại động từ </> - viền </> - (+ in,  about,  around) bao vây, bao bọc, bao quanh </> =to hem in the enemy+ bao vây quân địch </> *  danh từ </> - tiếng e hèm; tiếng đằng hắng, tiếng hắng giọng </> *  nội động từ </> - e hèm; đằng hắng, hắng giọng </> - nói ấp a ấp úng, nói ngắc ngứ </> *  thán từ </> - hèm!, e hèm!
@@ -6357,6 +6358,7 @@ Quakerish @ /'kweikəriʃ/ </> *  tính từ </> - giống như tín đồ phái
 Qualify @ /'kwɔlifai/ </> *  ngoại động từ </> - cho là, gọi là; định tính chất, định phẩm chất </> =to qualify someone á an ace+ cho ai là cừ, cho ai là cô địch </> - làm cho có đủ tư cách, làm cho có đủ khả năng, làm cho có đủ tiêu chuẩn; chuẩn bị đầy đủ điều kiện (để đảm nhiệm một chức vị gì...) </> =to be qualificed for a post+ có đủ tư cách đảm nhiệm một chức vụ </> =qualifying examination+ kỳ thi sát hạch, kỳ thi tuyển lựa </> - hạn chế, dè dặt; làm nhẹ bớt </> =to qualify a statement+ tuyên bố dè dặt </> - pha nước vào (rượu mạnh);(đùa cợt) pha vào rượu (nước lã) </> - (ngôn ngữ học) hạn định </> *  nội động từ </> - (+ for) có đủ tư cách, có đủ khả năng, có đủ tiêu chuẩn </> - qua kỳ thi sát hạch, qua kỳ thi tuyển lựa, tuyên thệ (để đảm nhiệm chức vụ gì...)
 Qualmish @ /'kwɔ:miʃ/ </> *  tính từ </> - buồn nôn, nôn nao </> =to feel qualmish+ cảm thấy buồn nôn </> - cảm thấy lo ngại, cảm thấy e sợ </> - băn khoăn dằn vật (trong lương tâm); day dứt
 Quandary @ /'kwɔndəri/ </> *  danh từ </> - tình thế lúng túng khó xử, tình thế bối rối </> =to be in a quandary+ ở trong một tình thế lúng túng khó xử
+Quang @ /bdc/</>gdfgf
 Quanta @ /'kwɔntəm/ </> *  danh từ,  số nhiều quanta </> - phần, mức, ngạch; lượng, định lượng </> =to fix the quantum of damages+ định mức thường thiệt hại </> =to have one's quantum of+ đã được dự phần, đã được hưởng phần </> - (vật lý) lượng tử </> =light quantum+ lượng tử ánh sáng </> =energy quantum+ lượng tử năng lượng </> - (định ngữ) (vật lý) (thuộc) lượng tử </> =quantum theory+ thuyết lượng tử </> =quantum effect+ hiệu ứng lượng tử
 Quantitative @ /'kwɔntitətiv/ </> *  tính từ </> - (thuộc) lượng, (thuộc) số lượng </> =quantitative change+ biến đổi về lượng </> - định lượng </> =quantitative analysis+ (hoá học) phân tích định lượng
 Quarender @ /'kwɔrəndən/ (quarender) </> *  danh từ </> - táo quaren, táo sớm

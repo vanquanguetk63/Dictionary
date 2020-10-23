@@ -2,10 +2,7 @@ package AppFx.Advanced;
 
 import base.Word;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -25,17 +22,20 @@ public class InitBookmark extends InitDictionary {
     public void insertFromFile() {
         try {
             System.out.println("insert BM");
-            File file = new File("src/main/resources/Bookmark.txt");
-            Scanner myReader = new Scanner(file);
-            String data;
+//            File file = new File("src/main/resources/Bookmark.txt");
+//            Scanner myReader = new Scanner(file);
+            InputStream inputStream = new FileInputStream("src/main/resources/Bookmark.txt");
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+            int index = 0;
+            String data = bufferedReader.readLine();
             String[] data2;
-            while (myReader.hasNextLine()) {
-                data = myReader.nextLine();
-                data2 = data.split(" @ ");
+            while (data != null) {
+                data2 = data.split( " @ " );
                 Word word = new Word(data2[0], data2[1]);
                 this.getDictionary().addWordToDictionary(word);
+                data = bufferedReader.readLine();
+
             }
-            myReader.close();
         } catch (Exception e) {
             System.out.println("Can't read file");
             e.printStackTrace();

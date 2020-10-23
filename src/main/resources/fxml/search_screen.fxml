@@ -20,7 +20,7 @@
       </AnchorPane>
       <AnchorPane fx:id="right_content" layoutX="357.0" layoutY="14.0" prefHeight="508.0" prefWidth="363.0" style="-fx-background-color: #FFFEFD;">
          <children>
-            <Label fx:id="speech" contentDisplay="GRAPHIC_ONLY" layoutX="126.0" layoutY="22.0" onMouseClicked="#handleSpeech" prefHeight="37.0" prefWidth="45.0" style="-fx-cursor: Hand;" text="Label">
+            <Label fx:id="speech" contentDisplay="GRAPHIC_ONLY" layoutX="148.0" layoutY="22.0" onMouseClicked="#handleSpeech" prefHeight="37.0" prefWidth="45.0" style="-fx-cursor: Hand;" text="Label">
                <graphic>
                   <ImageView fitHeight="35.0" fitWidth="59.0" onMouseClicked="#handleSpeech" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: pointer;">
                      <image>
@@ -65,7 +65,6 @@
                </font>
             </Label>
             <WebView id="web_explain" fx:id="web_explain" layoutX="10.0" layoutY="72.0" prefHeight="417.0" prefWidth="345.0" />
-            <Label fx:id="speech" layoutX="148.0" layoutY="16.0" onMouseClicked="#handleSpeech" prefHeight="49.0" prefWidth="37.0" style="-fx-cursor: Hand;" />
          </children></AnchorPane>
    </children>
 </AnchorPane>

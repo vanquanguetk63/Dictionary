@@ -26,18 +26,23 @@ public class Dictionary {
         return false;
     }
 
-    public void sortWord() {
-        for (int i = 0;i < wordArrayList.size() - 1; i++) {
-            for (int j = i + 1;j < wordArrayList.size(); j++) {
-                int compareTwoWord = wordArrayList.get(i).getWord_target()
-                                    .compareTo(wordArrayList.get(j).getWord_target());
-                if (compareTwoWord > 0) {
+    public void insertionSort() {
+        for (int i = 0; i < this.getWordArrayList().size(); i++) {
+            for (int j = i; j > 0; j--) {
+                Word word1 = this.getWordArrayList().get(j);
+                Word word2 = this.getWordArrayList().get(j - 1);
+                if (word1.getWord_target().compareTo(word2.getWord_target()) < 0) {
                     Word swapWord = wordArrayList.get(j);
-                    wordArrayList.set(j, wordArrayList.get(i));
-                    wordArrayList.set(i, swapWord);
+                    wordArrayList.set(j, wordArrayList.get(j - 1));
+                    wordArrayList.set(j - 1, swapWord);
                 }
             }
         }
+    }
+
+
+    public void sortWord() {
+        insertionSort();
     }
 
     public ArrayList<Word> getWordArrayList() {

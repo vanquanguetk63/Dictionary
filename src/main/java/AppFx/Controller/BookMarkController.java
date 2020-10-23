@@ -85,7 +85,8 @@ public class BookMarkController extends InController {
             if (confim.getResult() == ButtonType.OK ) {
                 controller.initBookmark.removeWord(word.getWord_target());
                 controller.bookMarkController.search_list_view_bm.getItems().remove(word.getWord_target());
-                this.controller.initBookmark.exportToFile();
+                this.controller.initBookmark.exportToFileBM();
+                this.search_input.clear();
                 Alert success = new Alert(Alert.AlertType.INFORMATION);
                 success.setTitle("Delete");
                 success.setHeaderText("Xóa thành công.");

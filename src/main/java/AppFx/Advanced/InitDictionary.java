@@ -43,7 +43,7 @@ public class InitDictionary extends DictionaryManegement {
         try {
             String data = word.getWord_target() + " @ " + word.getWord_explain() + "\n";
 
-            String fileName = "src/main/java/resources/Dictionary.txt";
+            String fileName = "src/main/resources/Dictionary.txt";
 
             BufferedWriter out = new BufferedWriter(
                     new FileWriter(fileName, true));

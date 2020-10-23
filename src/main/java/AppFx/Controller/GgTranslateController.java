@@ -37,8 +37,7 @@ public class GgTranslateController extends InController implements Initializable
     public WebView webview;
     private WebEngine webEngineWord;
 
-    private ObservableList<String> language = FXCollections.observableArrayList("Anh - Việt", "Việt - Anh", "Nhật - Việt", "Việt - Nhật",
-            "Pháp - Việt", "Việt - Pháp", "Hàn - Việt", "Việt - Hàn");
+    private ObservableList<String> language = FXCollections.observableArrayList("Anh - Việt", "Việt - Anh", "Nhật - Việt", "Việt - Nhật");
 
     public void handleTranslate(ActionEvent actionEvent) {
         try{
@@ -53,14 +52,6 @@ public class GgTranslateController extends InController implements Initializable
                     isTranslating("ja", "vi");
                 } else if (combobox.getValue().equals("Việt - Nhật")) {
                     isTranslating("vi", "ja");
-                } else if (combobox.getValue().equals("Pháp - Việt")) {
-                    isTranslating("fr", "vi");
-                } else if (combobox.getValue().equals("Việt - Pháp")) {
-                    isTranslating("vi", "fr");
-                } else if (combobox.getValue().equals("Hàn - Việt")) {
-                    isTranslating("ko", "vi");
-                } else if (combobox.getValue().equals("Việt - Hàn")) {
-                    isTranslating("vi", "ko");
                 }
             }
             else {
@@ -147,14 +138,6 @@ public class GgTranslateController extends InController implements Initializable
             getMP3("vi");
         } else if (combobox.getValue().equals("Việt - Nhật")) {
             getMP3("ja");
-        } else if (combobox.getValue().equals("Pháp - Việt")) {
-            getMP3("vi");
-        } else if (combobox.getValue().equals("Việt - Pháp")) {
-            getMP3("fr");
-        } else if (combobox.getValue().equals("Hàn - Việt")) {
-            getMP3("vi");
-        } else if (combobox.getValue().equals("Việt - Hàn")) {
-            getMP3("ko");
         }
     }
 
@@ -187,14 +170,6 @@ public class GgTranslateController extends InController implements Initializable
             } else if (combobox.getValue().equals("Nhật - Việt")) {
                 SoundGoogle.speak(str, "ja");
             } else if (combobox.getValue().equals("Việt - Nhật")) {
-                SoundGoogle.speak(str, "vi");
-            } else if (combobox.getValue().equals("Pháp - Việt")) {
-                SoundGoogle.speak(str, "fr");
-            } else if (combobox.getValue().equals("Việt - Pháp")) {
-                SoundGoogle.speak(str, "vi");
-            } else if (combobox.getValue().equals("Hàn - Việt")) {
-                SoundGoogle.speak(str, "ko");
-            } else if (combobox.getValue().equals("Việt - Hàn")) {
                 SoundGoogle.speak(str, "vi");
             }
         }
