@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.web.WebView?>
 
-<AnchorPane prefHeight="540.0" prefWidth="730.0" style="-fx-background-color: #11C7F0;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AppFx.Controller.GgTranslateController">
+<AnchorPane prefHeight="540.0" prefWidth="730.0" style="-fx-background-color: #77ACD7;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AppFx.Controller.GgTranslateController">
    <children>
       <ComboBox fx:id="combobox" layoutX="95.0" layoutY="8.0" onAction="#handleSelect" prefHeight="49.0" prefWidth="150.0" promptText="Select Language...." />
       <Label layoutX="14.0" layoutY="22.0" prefHeight="25.0" prefWidth="73.0" text="From : to">

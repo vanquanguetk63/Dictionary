@@ -28,7 +28,6 @@ public class EditWordController extends InController{
         } else {
             Word word = controller.getInitDictionary().dictionaryLookup(add_new_word.getText());
             if (word != null) {
-                System.out.println(word.getWord_target());
                 String wordTarget = add_new_word.getText();
                 String wordExplain = spelling.getText() + "</>" + meaning_word.getText();
                 word = new Word(wordTarget, wordExplain);

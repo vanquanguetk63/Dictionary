@@ -101,6 +101,7 @@ public class DictionaryManegement {
         }
     }
     public int binarySearchIndex(ArrayList<Word> words, int first, int last, String findWord) {
+        findWord = findWord.toLowerCase();
         if (last >= first) {
             int mid = first + (last - first) / 2;
             String wordOfList = words.get(mid).getWord_target().toLowerCase();
