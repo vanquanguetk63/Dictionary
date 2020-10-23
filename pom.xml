@@ -14,6 +14,14 @@
         <artifactId>junit</artifactId>
         <version>4.12</version>
         <scope>test</scope>
+        <systemPath>${basedir}/lib/java-google-speech-api-V2.1.jar</systemPath>
+        <systemPath>${basedir}/lib/jlayer-1.0.1.jar</systemPath>
+        <systemPath>${basedir}/lib/json-20180813.jar</systemPath>
+        <systemPath>${basedir}/lib/marytts-builder-5.2-jar-with-dependencies.jar</systemPath>
+        <systemPath>${basedir}/lib/marytts-lang-en-5.2.jar</systemPath>
+        <systemPath>${basedir}/lib/voice-cmu-rms-hsmm-5.2.jar</systemPath>
+        <systemPath>${basedir}/lib/voice-cmu-slt-hsmm-5.2.jar</systemPath>
+        <systemPath>${basedir}/lib/voice-dfki-poppy-hsmm-5.2.jar</systemPath>
     </dependency>
 
     <build>
